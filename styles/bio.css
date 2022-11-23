@@ -1,0 +1,36 @@
+/*Fonts*/
+@font-face {
+  font-family: "Avenir Regular";
+  src: url("/assets/font/AvenirNextLTPro-Regular.otf"), format(opentype);
+}
+@font-face {
+  font-family: "Avenir Demi";
+  src: url("/assets/font/AvenirNextLTPro-Demi.otf"), format(opentype);
+}
+@font-face {
+  font-family: "Avenir Bold";
+  src: url("/assets/font/AvenirNextLTPro-Bold.otf"), format(opentype);
+}
+/*Primary Colors*/
+/*Secondary Colors*/
+/*Breakpoints*/
+/*Main*/
+.bandsite-photo-gallery {
+  padding: 1.5rem;
+  background-color: #fafafa;
+}
+.bandsite-photo-gallery__title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #323232;
+}
+.bandsite-photo-gallery__images {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.bandsite-photo-gallery img {
+  height: auto;
+  width: 21rem;
+}/*# sourceMappingURL=bio.css.map */

@@ -1,0 +1,12 @@
+@use "./partials/mixins" as *;
+@use "./partials/variables" as *;
+
+* {
+  margin: 0;
+  font-family: "Avenir";
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}

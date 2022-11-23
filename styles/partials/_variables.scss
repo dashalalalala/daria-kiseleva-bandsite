@@ -1,0 +1,30 @@
+/*Fonts*/
+@font-face {
+  font-family: "Avenir Regular";
+  src: url("/assets/font/AvenirNextLTPro-Regular.otf"), format(opentype);
+}
+
+@font-face {
+  font-family: "Avenir Demi";
+  src: url("/assets/font/AvenirNextLTPro-Demi.otf"), format(opentype);
+}
+
+@font-face {
+  font-family: "Avenir Bold";
+  src: url("/assets/font/AvenirNextLTPro-Bold.otf"), format(opentype);
+}
+
+/*Primary Colors*/
+$bandsite-black: #323232;
+$bandsite-silver: #afafaf;
+
+/*Secondary Colors*/
+$bandsite-darkblack: #000000;
+$bandsite-mercury: #e1e1e1;
+$bandsite-alabaster: #fafafa;
+
+/*Breakpoints*/
+
+$breakpoint-mobile: 767px;
+$breakpoint-tablet: 1279px;
+$breakpoint-desktop: 1280px;

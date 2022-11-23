@@ -1,0 +1,124 @@
+/*Fonts*/
+@font-face {
+  font-family: "Avenir Regular";
+  src: url("/assets/font/AvenirNextLTPro-Regular.otf"), format(opentype);
+}
+@font-face {
+  font-family: "Avenir Demi";
+  src: url("/assets/font/AvenirNextLTPro-Demi.otf"), format(opentype);
+}
+@font-face {
+  font-family: "Avenir Bold";
+  src: url("/assets/font/AvenirNextLTPro-Bold.otf"), format(opentype);
+}
+/*Primary Colors*/
+/*Secondary Colors*/
+/*Breakpoints*/
+/*Header*/
+.bandsite-header {
+  background-color: #323232;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+.bandsite-header__logo {
+  padding-top: 1rem;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+.bandsite-header__nav {
+  /*display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+  */
+}
+.bandsite-header__nav-list {
+  color: white;
+  font-size: 1.375rem;
+  font-weight: lighter;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.bandsite-header__nav-list--active {
+  border-bottom: 0.2rem solid white;
+  padding-bottom: 1.4rem;
+}
+
+.bandsite-subheader {
+  position: relative;
+  height: 35vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.bandsite-subheader::before {
+  content: "";
+  background: url(/assets/images/hero-bio.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+.bandsite-subheader__title {
+  color: white;
+  position: relative;
+  margin-left: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.bandsite-subheader__overlay {
+  position: relative;
+  height: 35vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: rgba(20, 20, 20, 0.5);
+}
+
+.bandsite-about {
+  margin: 1.5rem;
+  width: 100%;
+}
+.bandsite-about__title {
+  font-size: 2.5rem;
+  color: #323232;
+}
+.bandsite-about__image {
+  margin: 1rem 0;
+  width: auto;
+  height: 35vh;
+}
+.bandsite-about__text-div {
+  display: flex;
+  flex-direction: column;
+}
+.bandsite-about__text {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  color: #323232;
+  margin: 1rem 0;
+}
+.bandsite-about__text--bold {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.125rem;
+  color: #323232;
+  margin: 1rem 0;
+}
+.bandsite-about__text--demi {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.125rem;
+  color: #000000;
+}/*# sourceMappingURL=header.css.map */
