@@ -18,38 +18,107 @@
 .bandsite-header {
   background-color: #323232;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .bandsite-header {
+    padding-top: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-header {
+    flex-direction: row;
+    padding-top: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .bandsite-header {
+    padding-top: 1rem;
+  }
 }
 .bandsite-header__logo {
-  padding-top: 1rem;
+  padding: 1rem 10% 0 10%;
   text-align: center;
   color: white;
   font-weight: 400;
   font-size: 2.5rem;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-header__logo {
+    padding-bottom: 2.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .bandsite-header__logo {
+    padding-bottom: 1.5rem;
+  }
+}
 
 .bandsite-header__nav {
-  /*display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-  */
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-header__nav {
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1280px) {
+  .bandsite-header__nav {
+    justify-content: flex-start;
+    width: auto;
+  }
 }
 .bandsite-header__nav-list {
   color: white;
   font-size: 1.375rem;
-  font-weight: lighter;
+  font-weight: 300;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   padding-top: 1rem;
-  width: 75vw;
+  width: 100vw;
 }
-.bandsite-header__nav-list--active {
-  border-bottom: 0.2rem solid white;
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-header__nav-list {
+    font-size: 1.5rem;
+    gap: 3rem;
+    width: auto;
+  }
+}
+@media (min-width: 1280px) {
+  .bandsite-header__nav-list {
+    gap: 3rem;
+    width: auto;
+  }
+}
+.bandsite-header__nav-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   padding-bottom: 1.4rem;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-header__nav-list-item {
+    width: 22%;
+    padding: 0 1rem 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .bandsite-header__nav-list-item {
+    width: auto;
+    padding-bottom: 1rem;
+  }
+}
+.bandsite-header__nav-list-item--active {
+  border-bottom: 0.3rem solid white;
+  font-weight: 500;
 }
 
 .bandsite-subheader {
@@ -58,6 +127,11 @@
   width: 100%;
   display: flex;
   align-items: center;
+}
+@media (min-width: 1280px) {
+  .bandsite-subheader {
+    height: 80vh;
+  }
 }
 .bandsite-subheader::before {
   content: "";
@@ -76,6 +150,11 @@
   font-size: 2.5rem;
   font-weight: 600;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-subheader__title {
+    font-size: 4rem;
+  }
+}
 
 .bandsite-subheader__overlay {
   position: relative;
@@ -85,23 +164,58 @@
   align-items: center;
   background: rgba(20, 20, 20, 0.5);
 }
+@media (min-width: 1280px) {
+  .bandsite-subheader__overlay {
+    height: 80vh;
+  }
+}
 
 .bandsite-about {
   margin: 1.5rem;
   width: 88%;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-about {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: auto;
+    width: 80%;
+  }
+}
 .bandsite-about__title {
   font-size: 2.5rem;
   color: #323232;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-about__title {
+    margin-left: -3.5rem;
+    margin-top: 3rem;
+  }
+}
 .bandsite-about__image {
   margin: 1rem 0;
-  width: auto;
-  height: 35vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-height: 30vh;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-about__image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    max-height: 35rem;
+  }
 }
 .bandsite-about__text-div {
   display: flex;
   flex-direction: column;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-about__text-div {
+    flex-direction: row;
+    gap: 1rem;
+  }
 }
 .bandsite-about__text {
   font-size: 1.45rem;
@@ -110,16 +224,41 @@
   color: #323232;
   margin: 1rem 0;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-about__text {
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+    width: 50%;
+  }
+}
 .bandsite-about__text--bold {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 2.3rem;
   color: #323232;
   margin: 1rem 0;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-about__text--bold {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-about__text-quote {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+  }
+}
 .bandsite-about__text--demi {
   font-size: 1.45rem;
-  font-weight: 400;
-  line-height: 1.125rem;
+  font-weight: 500;
+  margin: 3rem 0 0.825rem 0;
   color: #000000;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-about__text--demi {
+    font-weight: 600;
+    font-size: 1.55rem;
+  }
 }/*# sourceMappingURL=header.css.map */

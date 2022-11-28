@@ -4,26 +4,33 @@
 /*Main*/
 
 .bandsite-photo-gallery {
-  padding: 1.5rem;
-  background-color: $bandsite-alabaster;
+	padding: 1.5rem;
+	background-color: $bandsite-alabaster;
 
-  &__title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: $bandsite-black;
-  }
+	&__title {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+		color: $bandsite-black;
+	}
 
-  &__images {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 1rem;
-  }
+	&__images {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 1rem;
 
-  & img {
-    height: auto;
-    width: 32rem;
-  }
+		@include tablet {
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
 
+	& img {
+		height: auto;
+		width: 100%;
+
+		@include tablet {
+			width: 31%;
+		}
+	}
 }
-
