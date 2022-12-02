@@ -40,21 +40,23 @@
   }
 }
 .bandsite-header__logo {
-  padding: 1rem 10% 0 10%;
-  text-align: center;
-  color: white;
-  font-weight: 400;
-  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .bandsite-header__logo {
-    padding-bottom: 2.5rem;
+    padding: 2rem 7.5rem 2rem 3.5rem;
   }
 }
 @media (min-width: 1280px) {
   .bandsite-header__logo {
     padding-bottom: 1.5rem;
   }
+}
+.bandsite-header__logo--img {
+  height: 2rem;
+  width: auto;
 }
 
 .bandsite-header__nav {
@@ -86,7 +88,7 @@
 @media (min-width: 768px) and (max-width: 1279px) {
   .bandsite-header__nav-list {
     font-size: 1.5rem;
-    gap: 3rem;
+    gap: 1.5rem;
     width: auto;
   }
 }
@@ -102,12 +104,12 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-bottom: 1.4rem;
+  padding-bottom: 1.1rem;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .bandsite-header__nav-list-item {
     width: 22%;
-    padding: 0 1rem 2rem;
+    padding: 0 1.4rem 1rem;
   }
 }
 @media (min-width: 1280px) {
@@ -123,25 +125,31 @@
 
 .bandsite-subheader {
   position: relative;
-  height: 42vh;
+  height: 40vh;
   width: 100%;
   display: flex;
   align-items: center;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-subheader {
+    height: 65vw;
+  }
+}
 @media (min-width: 1280px) {
   .bandsite-subheader {
-    height: 80vh;
+    height: 80vw;
   }
 }
 .bandsite-subheader::before {
   content: "";
-  background: url(/assets/images/hero-bio.jpg);
+  background: url(../Assets/Images/hero-bio.jpg);
   background-size: cover;
   position: absolute;
   top: 0px;
   right: 0px;
   bottom: 0px;
   left: 0px;
+  overflow: hidden;
 }
 .bandsite-subheader__title {
   color: white;
@@ -152,113 +160,26 @@
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .bandsite-subheader__title {
-    font-size: 4rem;
+    font-size: 8vw;
+    margin-left: 3.5rem;
   }
 }
 
 .bandsite-subheader__overlay {
   position: relative;
-  height: 42vh;
+  height: 40vh;
   width: 100%;
   display: flex;
   align-items: center;
-  background: rgba(20, 20, 20, 0.5);
+  background: rgba(50, 50, 50, 0.5);
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-subheader__overlay {
+    height: 65vw;
+  }
 }
 @media (min-width: 1280px) {
   .bandsite-subheader__overlay {
-    height: 80vh;
-  }
-}
-
-.bandsite-about {
-  margin: 1.5rem;
-  width: 88%;
-}
-@media (min-width: 768px) and (max-width: 1279px) {
-  .bandsite-about {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    margin: auto;
-    width: 80%;
-  }
-}
-.bandsite-about__title {
-  font-size: 2.5rem;
-  color: #323232;
-}
-@media (min-width: 768px) and (max-width: 1279px) {
-  .bandsite-about__title {
-    margin-left: -3.5rem;
-    margin-top: 3rem;
-  }
-}
-.bandsite-about__image {
-  margin: 1rem 0;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  max-height: 30vh;
-}
-@media (min-width: 768px) and (max-width: 1279px) {
-  .bandsite-about__image {
-    -o-object-fit: cover;
-       object-fit: cover;
-    max-height: 35rem;
-  }
-}
-.bandsite-about__text-div {
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 768px) and (max-width: 1279px) {
-  .bandsite-about__text-div {
-    flex-direction: row;
-    gap: 1rem;
-  }
-}
-.bandsite-about__text {
-  font-size: 1.45rem;
-  font-weight: 400;
-  line-height: 2rem;
-  color: #323232;
-  margin: 1rem 0;
-}
-@media (min-width: 768px) and (max-width: 1279px) {
-  .bandsite-about__text {
-    font-size: 0.95rem;
-    line-height: 1.5rem;
-    width: 50%;
-  }
-}
-.bandsite-about__text--bold {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 2.3rem;
-  color: #323232;
-  margin: 1rem 0;
-}
-@media (min-width: 768px) and (max-width: 1279px) {
-  .bandsite-about__text--bold {
-    font-size: 1.4rem;
-    margin-bottom: 0;
-  }
-}
-@media (min-width: 768px) and (max-width: 1279px) {
-  .bandsite-about__text-quote {
-    font-size: 1.1rem;
-    margin-top: 0.5rem;
-  }
-}
-.bandsite-about__text--demi {
-  font-size: 1.45rem;
-  font-weight: 500;
-  margin: 3rem 0 0.825rem 0;
-  color: #000000;
-}
-@media (min-width: 768px) and (max-width: 1279px) {
-  .bandsite-about__text--demi {
-    font-weight: 600;
-    font-size: 1.55rem;
+    height: 80vw;
   }
 }/*# sourceMappingURL=header.css.map */

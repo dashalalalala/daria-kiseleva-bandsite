@@ -24,18 +24,21 @@
 	}
 
 	&__logo {
-		padding: 1rem 10% 0 10%;
-		text-align: center;
-		color: white;
-		font-weight: 400;
-		font-size: 2.5rem;
+		display: flex;
+		justify-content: center;
+		padding-top: 1rem;
 
 		@include tablet {
-			padding-bottom: 2.5rem;
+			padding: 2rem 7.5rem 2rem 3.5rem;
 		}
 
 		@include desktop {
 			padding-bottom: 1.5rem;
+		}
+
+		&--img {
+			height: 2rem;
+			width: auto;
 		}
 	}
 }
@@ -66,7 +69,7 @@
 
 		@include tablet {
 			font-size: 1.5rem;
-			gap: 3rem;
+			gap: 1.5rem;
 			width: auto;
 		}
 
@@ -81,11 +84,11 @@
 			justify-content: center;
 			align-items: center;
 			width: 100%;
-			padding-bottom: 1.4rem;
+			padding-bottom: 1.1rem;
 
 			@include tablet {
 				width: 22%;
-				padding: 0 1rem 2rem;
+				padding: 0 1.4rem 1rem;
 			}
 
 			@include desktop {
@@ -103,24 +106,29 @@
 
 .bandsite-subheader {
 	position: relative;
-	height: 42vh;
+	height: 40vh;
 	width: 100%;
 	display: flex;
 	align-items: center;
 
+	@include tablet {
+		height: 65vw;
+	}
+
 	@include desktop {
-		height: 80vh;
+		height: 80vw;
 	}
 
 	&::before {
 		content: "";
-		background: url(/assets/images/hero-bio.jpg);
+		background: url(../Assets/Images/hero-bio.jpg);
 		background-size: cover;
 		position: absolute;
 		top: 0px;
 		right: 0px;
 		bottom: 0px;
 		left: 0px;
+		overflow: hidden;
 	}
 
 	&__title {
@@ -131,111 +139,25 @@
 		font-weight: 600;
 
 		@include tablet {
-			font-size: 4rem;
+			font-size: 8vw;
+			margin-left: 3.5rem;
 		}
 	}
 }
 
 .bandsite-subheader__overlay {
 	position: relative;
-	height: 42vh;
+	height: 40vh;
 	width: 100%;
 	display: flex;
 	align-items: center;
-	background: rgba(19.61, 19.61, 19.61, 0.5);
-
-	@include desktop {
-		height: 80vh;
-	}
-}
-
-.bandsite-about {
-	margin: 1.5rem;
-	width: 88%;
+	background: rgba(50, 50, 50, 0.5);
 
 	@include tablet {
-		display: flex;
-		flex-direction: column;
-		align-content: center;
-		margin: auto;
-		width: 80%;
+		height: 65vw;
 	}
 
-	&__title {
-		font-size: 2.5rem;
-		color: $bandsite-black;
-
-		@include tablet {
-			margin-left: -3.5rem;
-			margin-top: 3rem;
-		}
-	}
-
-	&__image {
-		margin: 1rem 0;
-		width: 100%;
-		object-fit: cover;
-		max-height: 30vh;
-
-		@include tablet {
-			object-fit: cover;
-			max-height: 35rem;
-		}
-	}
-
-	&__text-div {
-		display: flex;
-		flex-direction: column;
-
-		@include tablet {
-			flex-direction: row;
-			gap: 1rem;
-		}
-	}
-
-	&__text {
-		font-size: 1.45rem;
-		font-weight: 400;
-		line-height: 2rem;
-		color: #323232;
-		margin: 1rem 0;
-
-		@include tablet {
-			font-size: 0.95rem;
-			line-height: 1.5rem;
-			width: 50%;
-		}
-
-		&--bold {
-			font-size: 1.5rem;
-			font-weight: 600;
-			line-height: 2.3rem;
-			color: #323232;
-			margin: 1rem 0;
-
-			@include tablet {
-				font-size: 1.4rem;
-				margin-bottom: 0;
-			}
-		}
-
-		&-quote {
-			@include tablet {
-				font-size: 1.1rem;
-				margin-top: 0.5rem;
-			}
-		}
-
-		&--demi {
-			font-size: 1.45rem;
-			font-weight: 500;
-			margin: 3rem 0 0.825rem 0;
-			color: $bandsite-darkblack;
-
-			@include tablet {
-				font-weight: 600;
-				font-size: 1.55rem;
-			}
-		}
+	@include desktop {
+		height: 80vw;
 	}
 }
