@@ -11,6 +11,10 @@
   font-family: "Avenir Bold";
   src: url("/assets/font/AvenirNextLTPro-Bold.otf"), format(opentype);
 }
+@font-face {
+  font-family: "Avenir Medium";
+  src: url("/Assets/font/AvenirNextLTPro-Medium.otf"), format(opentype);
+}
 /*Primary Colors*/
 /*Secondary Colors*/
 /*Breakpoints*/
@@ -21,6 +25,11 @@
   display: flex;
   flex-direction: column;
   position: relative;
+}
+@media (min-width: 1280px) {
+  .bandsite-footer {
+    padding: 2rem 80px;
+  }
 }
 .bandsite-footer__title {
   color: white;
@@ -38,6 +47,12 @@
   gap: 3rem;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-footer__social {
+    gap: 2rem;
+    margin: 1.3rem;
+  }
+}
+@media (min-width: 1280px) {
   .bandsite-footer__social {
     gap: 2rem;
     margin: 1.3rem;
@@ -70,6 +85,15 @@
     inline-size: auto;
   }
 }
+@media (min-width: 1280px) {
+  .bandsite-footer__contact {
+    flex-direction: row;
+    font-size: 1rem;
+    gap: 2.2rem;
+    padding: 2rem 0;
+    inline-size: auto;
+  }
+}
 .bandsite-footer__contact-list {
   display: flex;
   flex-direction: column;
@@ -85,11 +109,23 @@
     right: 1.5rem;
   }
 }
+@media (min-width: 1280px) {
+  .bandsite-footer__logo {
+    position: absolute;
+    bottom: 335px;
+    right: 5rem;
+  }
+}
 .bandsite-footer__logo--img {
   width: auto;
   height: 2rem;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-footer__logo--img {
+    height: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
   .bandsite-footer__logo--img {
     height: 1.5rem;
   }
@@ -102,11 +138,25 @@
     align-items: baseline;
   }
 }
+@media (min-width: 1280px) {
+  .bandsite-footer .bandsite-footer-top {
+    display: flex;
+    flex-direction: row;
+    gap: 1.1rem;
+    align-items: baseline;
+  }
+}
 .bandsite-footer copyright {
   color: white;
   font-size: 3.5vw;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-footer copyright {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+}
+@media (min-width: 1280px) {
   .bandsite-footer copyright {
     font-size: 1rem;
     margin: 1rem 0;

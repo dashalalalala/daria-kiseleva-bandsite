@@ -33,11 +33,11 @@
 		}
 
 		@include desktop {
-			padding-bottom: 1.5rem;
+			padding: 2rem 5.5rem 2rem 10.5rem;
 		}
 
 		&--img {
-			height: 2rem;
+			height: 1.5rem;
 			width: auto;
 		}
 	}
@@ -59,8 +59,8 @@
 
 	&-list {
 		color: white;
-		font-size: 1.375rem;
-		font-weight: 300;
+		font-size: 1.125rem;
+		font-weight: lighter;
 		display: flex;
 		justify-content: space-between;
 		gap: 1rem;
@@ -68,7 +68,6 @@
 		width: 100vw;
 
 		@include tablet {
-			font-size: 1.5rem;
 			gap: 1.5rem;
 			width: auto;
 		}
@@ -116,10 +115,10 @@
 	}
 
 	@include desktop {
-		height: 80vw;
+		height: 50vw;
 	}
 
-	&::before {
+/*	&::before {
 		content: "";
 		background: url(../Assets/Images/hero-bio.jpg);
 		background-size: cover;
@@ -128,8 +127,9 @@
 		right: 0px;
 		bottom: 0px;
 		left: 0px;
-		overflow: hidden;
-	}
+    background-blend-mode: hue;
+
+	}*/
 
 	&__title {
 		color: white;
@@ -142,6 +142,11 @@
 			font-size: 8vw;
 			margin-left: 3.5rem;
 		}
+
+    @include desktop {
+      font-size: 5vw;
+      margin-left: 10.5rem;
+    }
 	}
 }
 
@@ -151,13 +156,15 @@
 	width: 100%;
 	display: flex;
 	align-items: center;
-	background: rgba(50, 50, 50, 0.5);
+	background: url(../Assets/Images/hero-bio.jpg) rgba(50, 50, 50, 0.5);
+  background-size: cover;
+  background-blend-mode: hue;
 
 	@include tablet {
 		height: 65vw;
 	}
 
 	@include desktop {
-		height: 80vw;
+		height: 50vw;
 	}
 }

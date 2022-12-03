@@ -10,6 +10,10 @@
 	flex-direction: column;
 	position: relative;
 
+	@include desktop {
+		padding: 2rem 80px;
+	}
+
 	&__title {
 		color: white;
 		font-size: 2.55rem;
@@ -26,6 +30,11 @@
 		gap: 3rem;
 
 		@include tablet {
+			gap: 2rem;
+			margin: 1.3rem;
+		}
+
+		@include desktop {
 			gap: 2rem;
 			margin: 1.3rem;
 		}
@@ -57,6 +66,14 @@
 			inline-size: auto;
 		}
 
+		@include desktop {
+			flex-direction: row;
+			font-size: 1rem;
+			gap: 2.2rem;
+			padding: 2rem 0;
+			inline-size: auto;
+		}
+
 		&-list {
 			display: flex;
 			flex-direction: column;
@@ -73,11 +90,21 @@
 			right: 1.5rem;
 		}
 
+		@include desktop {
+			position: absolute;
+			bottom: 335px;
+			right: 5rem;
+		}
+
 		&--img {
 			width: auto;
 			height: 2rem;
 
 			@include tablet {
+				height: 1.5rem;
+			}
+
+			@include desktop {
 				height: 1.5rem;
 			}
 		}
@@ -90,6 +117,13 @@
 			gap: 1.1rem;
 			align-items: baseline;
 		}
+
+		@include desktop {
+			display: flex;
+			flex-direction: row;
+			gap: 1.1rem;
+			align-items: baseline;
+		}
 	}
 
 	copyright {
@@ -97,6 +131,11 @@
 		font-size: 3.5vw;
 
 		@include tablet {
+			font-size: 1rem;
+			margin: 1rem 0;
+		}
+
+		@include desktop {
 			font-size: 1rem;
 			margin: 1rem 0;
 		}

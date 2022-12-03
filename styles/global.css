@@ -11,6 +11,10 @@
   font-family: "Avenir Bold";
   src: url("/assets/font/AvenirNextLTPro-Bold.otf"), format(opentype);
 }
+@font-face {
+  font-family: "Avenir Medium";
+  src: url("/Assets/font/AvenirNextLTPro-Medium.otf"), format(opentype);
+}
 /*Primary Colors*/
 /*Secondary Colors*/
 /*Breakpoints*/

@@ -11,6 +11,10 @@
   font-family: "Avenir Bold";
   src: url("/assets/font/AvenirNextLTPro-Bold.otf"), format(opentype);
 }
+@font-face {
+  font-family: "Avenir Medium";
+  src: url("/Assets/font/AvenirNextLTPro-Medium.otf"), format(opentype);
+}
 /*Primary Colors*/
 /*Secondary Colors*/
 /*Breakpoints*/
@@ -27,6 +31,11 @@
     width: 80%;
   }
 }
+@media (min-width: 1280px) {
+  .bandsite-about {
+    width: 75%;
+  }
+}
 .bandsite-about__title {
   font-size: 2.55rem;
   color: #323232;
@@ -37,6 +46,11 @@
     margin-left: -3.5rem;
     margin-top: 3rem;
     font-size: 4.7vw;
+  }
+}
+@media (min-width: 1280px) {
+  .bandsite-about__title {
+    margin-left: -5rem;
   }
 }
 .bandsite-about__image {
@@ -53,11 +67,24 @@
     max-height: 35rem;
   }
 }
+@media (min-width: 1280px) {
+  .bandsite-about__image {
+    -o-object-fit: cover;
+       object-fit: cover;
+    max-height: 42rem;
+  }
+}
 .bandsite-about__text-div {
   display: flex;
   flex-direction: column;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-about__text-div {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
   .bandsite-about__text-div {
     flex-direction: row;
     gap: 1.5rem;
@@ -77,6 +104,13 @@
     width: 50%;
   }
 }
+@media (min-width: 1280px) {
+  .bandsite-about__text {
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+    width: 50%;
+  }
+}
 .bandsite-about__text--bold {
   font-size: 1.5rem;
   font-weight: 600;
@@ -90,10 +124,23 @@
     margin-bottom: 0;
   }
 }
+@media (min-width: 1280px) {
+  .bandsite-about__text--bold {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    margin-top: 1rem;
+  }
+}
 @media (min-width: 768px) and (max-width: 1279px) {
   .bandsite-about__text-quote {
     font-size: 1.1rem;
     margin-top: 0.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .bandsite-about__text-quote {
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
   }
 }
 .bandsite-about__text--demi {
@@ -108,11 +155,22 @@
     font-size: 1.55rem;
   }
 }
+@media (min-width: 1280px) {
+  .bandsite-about__text--demi {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+}
 
 /*Photo Gallery*/
 .bandsite-photo-gallery {
   padding: 2.5rem 1.5rem 1.5rem 1.5rem;
   background-color: #fafafa;
+}
+@media (min-width: 1280px) {
+  .bandsite-photo-gallery {
+    padding: 2rem 80px;
+  }
 }
 .bandsite-photo-gallery__title {
   font-size: 2.55rem;
@@ -136,11 +194,22 @@
     flex-wrap: wrap;
   }
 }
+@media (min-width: 1280px) {
+  .bandsite-photo-gallery__images {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 .bandsite-photo-gallery img {
   height: auto;
   width: 100%;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
+  .bandsite-photo-gallery img {
+    width: 31%;
+  }
+}
+@media (min-width: 1280px) {
   .bandsite-photo-gallery img {
     width: 31%;
   }

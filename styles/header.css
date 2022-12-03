@@ -11,6 +11,10 @@
   font-family: "Avenir Bold";
   src: url("/assets/font/AvenirNextLTPro-Bold.otf"), format(opentype);
 }
+@font-face {
+  font-family: "Avenir Medium";
+  src: url("/Assets/font/AvenirNextLTPro-Medium.otf"), format(opentype);
+}
 /*Primary Colors*/
 /*Secondary Colors*/
 /*Breakpoints*/
@@ -51,11 +55,11 @@
 }
 @media (min-width: 1280px) {
   .bandsite-header__logo {
-    padding-bottom: 1.5rem;
+    padding: 2rem 5.5rem 2rem 10.5rem;
   }
 }
 .bandsite-header__logo--img {
-  height: 2rem;
+  height: 1.5rem;
   width: auto;
 }
 
@@ -77,8 +81,8 @@
 }
 .bandsite-header__nav-list {
   color: white;
-  font-size: 1.375rem;
-  font-weight: 300;
+  font-size: 1.125rem;
+  font-weight: lighter;
   display: flex;
   justify-content: space-between;
   gap: 1rem;
@@ -87,7 +91,6 @@
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .bandsite-header__nav-list {
-    font-size: 1.5rem;
     gap: 1.5rem;
     width: auto;
   }
@@ -129,6 +132,18 @@
   width: 100%;
   display: flex;
   align-items: center;
+  /*	&::before {
+  		content: "";
+  		background: url(../Assets/Images/hero-bio.jpg);
+  		background-size: cover;
+  		position: absolute;
+  		top: 0px;
+  		right: 0px;
+  		bottom: 0px;
+  		left: 0px;
+      background-blend-mode: hue;
+
+  	}*/
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .bandsite-subheader {
@@ -137,19 +152,8 @@
 }
 @media (min-width: 1280px) {
   .bandsite-subheader {
-    height: 80vw;
+    height: 50vw;
   }
-}
-.bandsite-subheader::before {
-  content: "";
-  background: url(../Assets/Images/hero-bio.jpg);
-  background-size: cover;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  overflow: hidden;
 }
 .bandsite-subheader__title {
   color: white;
@@ -164,6 +168,12 @@
     margin-left: 3.5rem;
   }
 }
+@media (min-width: 1280px) {
+  .bandsite-subheader__title {
+    font-size: 5vw;
+    margin-left: 10.5rem;
+  }
+}
 
 .bandsite-subheader__overlay {
   position: relative;
@@ -171,7 +181,9 @@
   width: 100%;
   display: flex;
   align-items: center;
-  background: rgba(50, 50, 50, 0.5);
+  background: url(../Assets/Images/hero-bio.jpg) rgba(50, 50, 50, 0.5);
+  background-size: cover;
+  background-blend-mode: hue;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .bandsite-subheader__overlay {
@@ -180,6 +192,6 @@
 }
 @media (min-width: 1280px) {
   .bandsite-subheader__overlay {
-    height: 80vw;
+    height: 50vw;
   }
 }/*# sourceMappingURL=header.css.map */
