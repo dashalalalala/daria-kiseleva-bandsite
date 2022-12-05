@@ -193,6 +193,11 @@
 	& img {
 		height: auto;
 		width: 100%;
+		filter: grayscale(1);
+
+		&:hover {
+			filter: none;
+		}
 
 		@include tablet {
 			width: 31.5%;
