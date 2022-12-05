@@ -41,7 +41,7 @@
 .bandsite-header__logo {
   display: flex;
   justify-content: center;
-  padding: 1rem 0;
+  padding: 1rem 0 0.5rem 0;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .bandsite-header__logo {
@@ -112,7 +112,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .bandsite-header__nav-list-item {
@@ -133,7 +133,7 @@
 .bandsite-header__nav-list-item:hover {
   color: #fafafa;
   background-color: rgba(255, 255, 255, 0.3);
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 }
 
 /*Subheader*/
