@@ -13,18 +13,29 @@
 }
 @font-face {
   font-family: "Avenir Medium";
-  src: url("/Assets/font/AvenirNextLTPro-Medium.otf"), format(opentype);
+  src: url("/assets/font/AvenirNextLTPro-Medium.otf"), format(opentype);
 }
 /*Primary Colors*/
 /*Secondary Colors*/
 /*Breakpoints*/
+/*Flex Mixins*/
+/*Font Mixins (Mobile)*/
+/*Font Mixins (Tablet & Desktop)*/
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: "Avenir";
 }
 
 ul {
   list-style: none;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  line-height: 0;
 }/*# sourceMappingURL=global.css.map */

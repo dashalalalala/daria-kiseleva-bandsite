@@ -8,7 +8,6 @@
 
 	@include mobile {
 		padding-top: 1rem;
-		flex-direction: column;
 		justify-content: center;
 		align-content: center;
 		flex-wrap: wrap;
@@ -16,11 +15,6 @@
 
 	@include tablet {
 		flex-direction: row;
-		padding-top: 1rem;
-	}
-
-	@include desktop {
-		padding-top: 1rem;
 	}
 
 	&__logo {
@@ -29,38 +23,41 @@
 		padding-top: 1rem;
 
 		@include tablet {
-			padding: 2rem 7.5rem 2rem 3.5rem;
+			padding: 1.5rem 4rem 1.5rem 0rem;
 		}
 
 		@include desktop {
-			padding: 2rem 5.5rem 2rem 10.5rem;
+			padding: 1.5rem 4rem 1.5rem 0rem;
 		}
 
 		&--img {
-			height: 1.5rem;
+			height: 1.25rem;
 			width: auto;
 		}
 	}
 }
 
 .bandsite-header__nav {
-	display: flex;
-	width: 100%;
+	@include flex-column;
 	justify-content: space-evenly;
 
 	@include tablet {
+		@include flex-row;
 		justify-content: flex-start;
+		width: calc(100% - 4.5rem);
+		margin: auto;
 	}
 
 	@include desktop {
+		@include flex-row;
 		justify-content: flex-start;
-		width: auto;
+		width: calc(100% - 22rem);
+		margin: auto;
 	}
 
 	&-list {
+		@include mobile-copy;
 		color: white;
-		font-size: 1.125rem;
-		font-weight: lighter;
 		display: flex;
 		justify-content: space-between;
 		gap: 1rem;
@@ -68,26 +65,26 @@
 		width: 100vw;
 
 		@include tablet {
-			gap: 1.5rem;
+			@include copy;
+			gap: 3rem;
 			width: auto;
 		}
 
 		@include desktop {
+			@include copy;
 			gap: 3rem;
 			width: auto;
 		}
 
 		&-item {
-			display: flex;
-			flex-direction: row;
+			@include flex-row;
 			justify-content: center;
 			align-items: center;
 			width: 100%;
 			padding-bottom: 1.1rem;
 
 			@include tablet {
-				width: 22%;
-				padding: 0 1.4rem 1rem;
+				width: auto;
 			}
 
 			@include desktop {
@@ -96,7 +93,7 @@
 			}
 
 			&--active {
-				border-bottom: 0.3rem solid white;
+				border-bottom: 0.2rem solid white;
 				font-weight: 500;
 			}
 		}
@@ -110,58 +107,50 @@
 	display: flex;
 	align-items: center;
 
+	@include mobile {
+		padding: 1rem;
+	}
+
 	@include tablet {
-		height: 65vw;
+		height: 54vw;
+		padding: 2rem;
 	}
 
 	@include desktop {
 		height: 50vw;
+		width: calc(100% - 22rem);
+		margin: auto;
 	}
 
-/*	&::before {
-		content: "";
-		background: url(../Assets/Images/hero-bio.jpg);
-		background-size: cover;
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		bottom: 0px;
-		left: 0px;
-    background-blend-mode: hue;
-
-	}*/
-
 	&__title {
+		@include mobile-header;
 		color: white;
 		position: relative;
-		margin-left: 1.5rem;
-		font-size: 2.5rem;
-		font-weight: 600;
+		font-family: "Avenir Medium";
+		letter-spacing: 1px;
 
 		@include tablet {
-			font-size: 8vw;
-			margin-left: 3.5rem;
+			@include page-header;
 		}
 
-    @include desktop {
-      font-size: 5vw;
-      margin-left: 10.5rem;
-    }
+		@include desktop {
+			@include page-header;
+		}
 	}
 }
 
-.bandsite-subheader__overlay {
+.bandsite-subheader-overlay {
 	position: relative;
 	height: 40vh;
 	width: 100%;
 	display: flex;
 	align-items: center;
-	background: url(../Assets/Images/hero-bio.jpg) rgba(50, 50, 50, 0.5);
-  background-size: cover;
-  background-blend-mode: hue;
+	background: url(../Assets/Images/hero-bio.jpg) rgba(50, 50, 50, 0.4);
+	background-size: cover;
+	background-blend-mode: hue;
 
 	@include tablet {
-		height: 65vw;
+		height: 54vw;
 	}
 
 	@include desktop {

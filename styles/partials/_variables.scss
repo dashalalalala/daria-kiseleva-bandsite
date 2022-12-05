@@ -15,8 +15,8 @@
 }
 
 @font-face {
-  font-family: "Avenir Medium";
-  src: url("/Assets/font/AvenirNextLTPro-Medium.otf"), format(opentype);
+	font-family: "Avenir Medium";
+	src: url("/assets/font/AvenirNextLTPro-Medium.otf"), format(opentype);
 }
 
 /*Primary Colors*/
@@ -29,7 +29,6 @@ $bandsite-mercury: #e1e1e1;
 $bandsite-alabaster: #fafafa;
 
 /*Breakpoints*/
-
 $breakpoint-mobile: 767px;
 $breakpoint-tablet: 1279px;
 $breakpoint-desktop: 1280px;
