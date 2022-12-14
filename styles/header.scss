@@ -1,7 +1,7 @@
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
 
-/*Header*/
+/*Bandsite & Shows Header*/
 .bandsite-header {
 	background-color: $bandsite-black;
 	display: flex;
@@ -102,7 +102,7 @@
 	}
 }
 
-/*Subheader*/
+/*Bandsite Subheader*/
 .bandsite-subheader {
 	position: relative;
 	height: 40vh;
@@ -146,6 +146,78 @@
 	display: flex;
 	align-items: center;
 	background: url(../assets/images/hero-bio.jpg) rgba(50, 50, 50, 0.4);
+	background-size: cover;
+	background-blend-mode: hue;
+
+	@include tablet {
+		height: 54vw;
+	}
+
+	@include desktop {
+		height: 50vw;
+	}
+}
+
+/*Shows Subheader*/
+.shows-subheader__text {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+.shows-subheader {
+	position: relative;
+	height: 20rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1.5rem;
+	padding: 2.5rem 1rem;
+
+	@include tablet {
+		height: 54vw;
+		padding: 2rem;
+	}
+
+	@include desktop {
+		height: 50vw;
+		width: calc(100% - 22rem);
+		margin: auto;
+	}
+
+	&__section-header {
+		@include mobile-subheader;
+		color: white;
+
+	}
+
+	&__title {
+		@include mobile-header;
+		color: white;
+		position: relative;
+		font-family: "Avenir Medium";
+		letter-spacing: 1px;
+		max-width: 80%;
+		margin: 0;
+
+		@include tablet {
+			@include page-header;
+		}
+
+		@include desktop {
+			@include page-header;
+		}
+	}
+}
+
+.shows-subheader-overlay {
+	position: relative;
+	height: 20rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background: url(../assets/images/hero-shows.jpg) rgba(50, 50, 50, 0.4);
 	background-size: cover;
 	background-blend-mode: hue;
 

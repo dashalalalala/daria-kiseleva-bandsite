@@ -46,9 +46,11 @@
 					<li
 						class="bandsite-header__nav-list-item bandsite-header__nav-list-item--active"
 					>
-						Biography
+						<a href="./index.html"> Biography</a>
 					</li>
-					<li class="bandsite-header__nav-list-item">Shows</li>
+					<li class="bandsite-header__nav-list-item">
+						<a href="./pages/shows.html"> Shows </a>
+					</li>
 				</ul>
 			</nav>
 		</header>
@@ -144,6 +146,42 @@
 				</div>
 			</div>
 		</section>
+		<section class="bandsite-form">
+			<h2 class="bandsite-form__title">Join the Conversation</h2>
+			<div class="bandsite-form__card">
+				<div class=bandsite-form__card-img><img
+					src="./assets/images/Mohan-muruge.jpg"
+					class="bandsite-form__card-img--avatar"
+					alt="man image profile"
+				/>
+				</div>
+				<form id="comments-form">
+					<fieldset class="bandsite-form__card-fieldset">
+						<input for="img" type="hidden" id="img" name="img"/>
+						<label class="bandsite-form__card-fieldset--title">NAME </label></br>
+						<input
+							for= "name"
+							type="text"
+							id="name"
+							name="name"
+							placeholder="Enter your name"
+							required
+						/>
+						<label class="bandsite-form__card-fieldset--title">COMMENT</label></br>
+						<textarea
+							for="comment"
+							id="comment"
+							name="comment"
+							placeholder= "Add a new comment"
+							required
+						></textarea>
+					</fieldset>
+					<button type="submit" class="bandsite-form__card-fieldset--button">COMMENT</button>
+				</form>
+			</div>
+		</section>
+		<div class = bandsite-comments-section>
+		</div>
 		<footer class="bandsite-footer">
 			<div class="bandsite-footer-desktop bandsite-footer-tablet">
 				<section class="bandsite-footer-top">
@@ -216,5 +254,6 @@
 				>
 			</div>
 		</footer>
+		<script src="./scripts/index-page.js"></script>
 	</body>
 </html>

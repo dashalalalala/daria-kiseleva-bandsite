@@ -222,3 +222,172 @@
 		margin: auto;
 	}
 }
+
+/*Comments Section*/
+.bandsite-form {
+	padding: 1rem;
+
+	&__title {
+		@include mobile-header;
+		margin-bottom: 1rem;
+		color: $bandsite-black;
+		font-family: "Avenir Medium";
+
+		@include tablet {
+			@include section-header;
+		}
+
+		@include desktop {
+			@include section-header;
+		}
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-around;
+		gap: 1rem;
+		border-bottom: 1px solid $bandsite-mercury;
+		padding-bottom: 1rem;
+
+		&-img {
+			padding: 1rem 0;
+
+			&--avatar {
+				max-width: 2.25rem;
+				height: 2.25rem;
+				border-radius: 50%;
+				filter: none;
+				object-fit: cover;
+			}
+		}
+
+		/*Fieldset Section*/
+		&-fieldset--title {
+			@include mobile-button-label;
+			color: $bandsite-silver;
+		}
+
+		&-fieldset {
+			border: none;
+
+			&--button {
+				@include mobile-button-label;
+				background-color: $bandsite-black;
+				color: white;
+				height: 2.5rem;
+				border: none;
+				border-radius: 4px;
+			}
+
+			&--placeholder {
+				background-color: $bandsite-mercury;
+				width: 2.25rem;
+				height: 2.25rem;
+				border-radius: 50%;
+				filter: none;
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+#comments-form {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	width: 82%;
+}
+
+input,
+textarea {
+	@include mobile-copy;
+	width: -webkit-fill-available;
+	height: 3rem;
+	border: 1px solid $bandsite-mercury;
+	background-color: $bandsite-alabaster;
+	padding: 1rem;
+	color: $bandsite-black;
+	border-radius: 4px;
+	overflow-wrap: break-word;
+
+	&:active {
+		border: $bandsite-black;
+	}
+
+	&#comment {
+		height: 7rem;
+		resize: none;
+	}
+}
+
+.bandsite-comments-section {
+	padding: 0 1rem 1rem 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: space-around;
+	gap: 1rem;
+
+	&--placeholder {
+		background-color: $bandsite-mercury;
+		width: 2.25rem;
+		height: 2.25rem;
+		border-radius: 50%;
+		filter: none;
+		object-fit: cover;
+	}
+
+	&__card {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: space-around;
+		gap: 1rem;
+		padding-bottom: 0.5rem;
+		border-bottom: 1px solid $bandsite-mercury;
+		width: -webkit-fill-available;
+
+		&-text {
+			width: -webkit-fill-available;
+		}
+
+		&-text-1 {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 0.5rem;
+
+			&--title {
+				@include mobile-copy;
+				font-weight: 700;
+				color: $bandsite-black;
+			}
+
+			&--date {
+				@include mobile-copy;
+				color: $bandsite-silver;
+			}
+		}
+
+		&-text-2 {
+			&--comment {
+				@include mobile-copy;
+				width: auto;
+				overflow-wrap: break-word;
+				color: $bandsite-black;
+			}
+		}
+	}
+}
+
+.bandsite-comments-section__left-image--placeholder {
+	background-color: $bandsite-mercury;
+	width: 2.25rem;
+	height: 2.25rem;
+	border-radius: 50%;
+	filter: none;
+	object-fit: cover;
+}
