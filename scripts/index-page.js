@@ -40,7 +40,7 @@ let comments = [
 	},
 ];
 
-	//Event Listener
+//Event Listener
 function setupViews() {
 	FormEl.addEventListener("submit", formSubmitHandler);
 }
@@ -51,10 +51,10 @@ function createCommentCard(comment) {
 	commentCard.classList.add("bandsite-comments-section__card");
 
 	const imgElDiv = document.createElement("div");
-	imgElDiv.classList.add("bandsite-comments-section__left-image");
+	imgElDiv.classList.add("bandsite-comments-section__left");
 
 	const imgEl = document.createElement("img");
-	imgEl.classList.add("bandsite-comments-section__left-image--placeholder");
+	imgEl.classList.add("bandsite-comments-section__left--image");
 	imgEl.innerHTML = comment.image;
 
 	imgElDiv.append(imgEl);
@@ -99,10 +99,6 @@ function displayComment() {
 	for (let i = 0; i < comments.length; i++) {
 		commentsList.appendChild(createCommentCard(comments[i]));
 	}
-
-	// comments.sort((a, b) => {
-	// 		return b.timestamp - a.timestamp;
-	// 	});
 }
 
 //Form Submit Handler
@@ -121,7 +117,7 @@ function formSubmitHandler(e) {
 	};
 
 	FormEl.reset();
-	comments.push(commentSubmission);
+	comments.unshift(commentSubmission);
 	displayComment();
 
 	return false;

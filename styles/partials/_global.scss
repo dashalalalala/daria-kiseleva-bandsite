@@ -1,5 +1,5 @@
-@use "./partials/mixins" as *;
-@use "./partials/variables" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
 
 * {
 	margin: 0;
@@ -17,4 +17,5 @@ a {
 	text-decoration: none;
 	color: inherit;
 	cursor: pointer;
+	max-height: 20px;
 }

@@ -55,10 +55,43 @@ let shows = [
 	},
 ];
 
-function createShowsListCard(show) {
-  // const showCardDiv = document.createElement("div");
-  // showCardDiv.classList.add("bandsite-concerts__list");
+function createShowsListTittleCard(show) {
+	const titleCardEl = document.createElement("div");
+	titleCardEl.classList.add("bandsite-concerts__titles");
 
+	const dateTitleEl = document.createElement("h3");
+	dateTitleEl.classList.add("bandsite-concerts__titles--text");
+	dateTitleEl.innerText = show.dateTitle;
+
+	const venueTitleEl = document.createElement("h3");
+	venueTitleEl.classList.add("bandsite-concerts__titles--text");
+	venueTitleEl.innerText = show.venueTitle;
+
+	const locationTitleEl = document.createElement("h3");
+	locationTitleEl.classList.add("bandsite-concerts__titles--text");
+	locationTitleEl.innerText = show.locationTitle;
+
+	const buttonEl = document.createElement("button");
+	buttonEl.classList.add("bandsite-concerts__titles--button");
+	buttonEl.innerHTML = "";
+
+	titleCardEl.append(dateTitleEl, venueTitleEl, locationTitleEl, buttonEl);
+
+	return titleCardEl;
+}
+
+function displayCardTitles() {
+	const cardTitles = document.querySelector(".bandsite-concerts__list");
+
+	for (let i = 0; i < 1; i++) {
+		cardTitles.appendChild(createShowsListTittleCard(shows[i]));
+	}
+}
+
+displayCardTitles();
+displayCard();
+
+function createShowsListCard(show) {
 	const cardEl = document.createElement("div");
 	cardEl.classList.add("bandsite-concerts__list-card");
 
@@ -69,9 +102,9 @@ function createShowsListCard(show) {
 	dateTitleEl.classList.add("bandsite-concerts__list-card--title");
 	dateTitleEl.innerText = show.dateTitle;
 
-  const dateEl = document.createElement("p");
+	const dateEl = document.createElement("p");
 	dateEl.classList.add("bandsite-concerts__list-card--date");
-  dateEl.innerText = show.date;
+	dateEl.innerText = show.date;
 
 	const venueSection = document.createElement("article");
 	venueSection.classList.add("bandsite-concerts__list-card-split");
@@ -80,36 +113,32 @@ function createShowsListCard(show) {
 	venueTitleEl.classList.add("bandsite-concerts__list-card--title");
 	venueTitleEl.innerText = show.venueTitle;
 
-  const venueEl = document.createElement("p");
+	const venueEl = document.createElement("p");
 	venueEl.classList.add("bandsite-concerts__list-card--text");
-  venueEl.innerText = show.venue;
+	venueEl.innerText = show.venue;
 
 	const locationSection = document.createElement("article");
 	locationSection.classList.add("bandsite-concerts__list-card-split");
 
-	const locationTitle = document.createElement("h3");
-	locationTitle.classList.add("bandsite-concerts__list-card--title");
-	locationTitle.innerText = show.locationTitle;
+	const locationTitleEl = document.createElement("h3");
+	locationTitleEl.classList.add("bandsite-concerts__list-card--title");
+	locationTitleEl.innerText = show.locationTitle;
 
-  const locationEl = document.createElement("p");
+	const locationEl = document.createElement("p");
 	locationEl.classList.add("bandsite-concerts__list-card--text");
-  locationEl.innerText = show.location;
+	locationEl.innerText = show.location;
 
 	const buttonEl = document.createElement("button");
 	buttonEl.classList.add("bandsite-concerts__list-card--button");
 	buttonEl.innerHTML = "BUY TICKETS";
 
-	const borderEl = document.createElement("div");
-	borderEl.classList.add("bandsite-concerts__list-card--border");
-	borderEl.innerHTML = "";
-
 	// showCardDiv.append(cardEl);
-	dateSection.append(dateTitleEl,dateEl);
-	venueSection.append(venueTitleEl,venueEl);
-	locationSection.append(locationTitle,locationEl)
-  cardEl.append(dateSection, venueSection, locationSection, buttonEl, borderEl);
+	dateSection.append(dateTitleEl, dateEl);
+	venueSection.append(venueTitleEl, venueEl);
+	locationSection.append(locationTitleEl, locationEl);
+	cardEl.append(dateSection, venueSection, locationSection, buttonEl);
 
-  return cardEl;
+	return cardEl;
 }
 
 function displayCard() {
@@ -120,4 +149,12 @@ function displayCard() {
 	}
 }
 
-displayCard();
+//Making Row Selected Function
+const cardEls = document.querySelectorAll(".bandsite-concerts__list-card");
+
+cardEls.forEach((div) => {
+	div.addEventListener("click", function () {
+		cardEls.forEach((d) => (d.className = "bandsite-concerts__list-card"));
+		div.className = "bandsite-concerts__list-card--selected";
+	});
+});

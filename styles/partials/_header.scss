@@ -1,20 +1,31 @@
-@use "./partials/mixins" as *;
-@use "./partials/variables" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
+
+//Mixins
+@mixin subheader-section {
+	position: relative;
+	height: 20rem;
+	width: 100%;
+	display: flex;
+}
+
+@mixin overlay-section {
+	position: relative;
+	height: 20rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-size: cover;
+	background-blend-mode: hue;
+}
 
 /*Bandsite & Shows Header*/
 .bandsite-header {
 	background-color: $bandsite-black;
 	display: flex;
-
-	@include mobile {
-		justify-content: center;
-		align-content: center;
-		flex-wrap: wrap;
-	}
-
-	@include tablet {
-		flex-direction: row;
-	}
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
 
 	&__logo {
 		display: flex;
@@ -50,7 +61,7 @@
 	@include desktop {
 		@include flex-row;
 		justify-content: flex-start;
-		width: calc(100% - 22rem);
+		width: calc(100% - 18rem);
 		margin: auto;
 	}
 
@@ -78,6 +89,10 @@
 			width: 100%;
 			padding: 0.5rem 0;
 
+			&:hover {
+				border-bottom: 0.2rem solid white;
+			}
+
 			@include tablet {
 				width: auto;
 				margin: 0 1.5rem;
@@ -92,41 +107,45 @@
 				border-bottom: 0.2rem solid white;
 				font-weight: 500;
 			}
-
-			&:hover {
-				color: $bandsite-alabaster;
-				background-color: rgba(255, 255, 255, 0.3);
-				padding: 0.5rem 1rem;
-			}
 		}
 	}
 }
 
 /*Bandsite Subheader*/
 .bandsite-subheader {
-	position: relative;
-	height: 40vh;
-	width: 100%;
-	display: flex;
+	@include subheader-section;
 	align-items: center;
 	padding: 1rem;
 
 	@include tablet {
-		height: 54vw;
+		height: 62vw;
 		padding: 2rem;
 	}
 
 	@include desktop {
 		height: 50vw;
-		width: calc(100% - 22rem);
+		width: calc(100% - 18rem);
 		margin: auto;
+		padding: 0;
+	}
+
+	&-overlay {
+		background: url(../assets/images/hero-bio.jpg) rgba(50, 50, 50, 0.4);
+		@include overlay-section;
+
+		@include tablet {
+			height: 62vw;
+		}
+
+		@include desktop {
+			height: 50vw;
+		}
 	}
 
 	&__title {
 		@include mobile-header;
 		color: white;
 		position: relative;
-		font-family: "Avenir Medium";
 		letter-spacing: 1px;
 
 		@include tablet {
@@ -139,93 +158,105 @@
 	}
 }
 
-.bandsite-subheader-overlay {
-	position: relative;
-	height: 40vh;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	background: url(../assets/images/hero-bio.jpg) rgba(50, 50, 50, 0.4);
-	background-size: cover;
-	background-blend-mode: hue;
-
-	@include tablet {
-		height: 54vw;
-	}
-
-	@include desktop {
-		height: 50vw;
-	}
-}
-
 /*Shows Subheader*/
-.shows-subheader__text {
-	display: flex;
-	flex-direction: column;
-	gap: 1.5rem;
-}
-
 .shows-subheader {
-	position: relative;
-	height: 20rem;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+	@include subheader-section;
 	gap: 1.5rem;
+	flex-direction: column;
 	padding: 2.5rem 1rem;
 
 	@include tablet {
-		height: 54vw;
+		justify-content: center;
+		gap: 0;
+		height: 62vw;
 		padding: 2rem;
+		width: calc(100% - 7.5rem);
 	}
 
 	@include desktop {
+		flex-direction: row;
+		align-items: center;
 		height: 50vw;
-		width: calc(100% - 22rem);
+		width: calc(100% - 18rem);
 		margin: auto;
+		padding: 2rem 0;
+	}
+
+	&-overlay {
+		background: url(../assets/images/hero-shows.jpg) rgba(50, 50, 50, 0.4);
+		@include overlay-section;
+
+		@include tablet {
+			height: 65vw;
+			background-position: center;
+		}
+
+		@include desktop {
+			height: 50vw;
+		}
+	}
+
+	&__text {
+		@include flex-column;
+		gap: 1rem;
+		width: -webkit-fill-available;
+
+		@include tablet {
+			width: auto;
+		}
+
+		@include desktop {
+			width: auto;
+		}
 	}
 
 	&__section-header {
 		@include mobile-subheader;
 		color: white;
+		font-weight: 400;
 
+		@include tablet {
+			@include subheader;
+			font-weight: 500;
+		}
+
+		@include desktop {
+			@include subheader;
+		}
 	}
 
 	&__title {
 		@include mobile-header;
 		color: white;
 		position: relative;
-		font-family: "Avenir Medium";
 		letter-spacing: 1px;
-		max-width: 80%;
+		max-width: 75%;
 		margin: 0;
 
 		@include tablet {
 			@include page-header;
+			max-width: 100%;
+			padding-bottom: 3rem;
 		}
 
 		@include desktop {
 			@include page-header;
+			max-width: 92%;
+			padding-bottom: 3rem;
 		}
 	}
 }
 
-.shows-subheader-overlay {
-	position: relative;
-	height: 20rem;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	background: url(../assets/images/hero-shows.jpg) rgba(50, 50, 50, 0.4);
-	background-size: cover;
-	background-blend-mode: hue;
+iframe {
+	width: -webkit-fill-available;
 
 	@include tablet {
-		height: 54vw;
+		width: calc(100% - 10.5rem);
+		height: 10rem;
 	}
 
 	@include desktop {
-		height: 50vw;
+		width: calc(100% - 14.5rem);
+		height: 10rem;
 	}
 }

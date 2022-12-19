@@ -1,41 +1,146 @@
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
+@import "./partials/header";
+@import "./partials/footer";
+@import "./partials/global";
 
 .bandsite-concerts {
 	padding: 1rem;
 
+	@include tablet {
+		width: calc(100% - 2rem);
+		margin: auto;
+		padding: 2rem 0;
+	}
+
+	@include desktop {
+		width: calc(100% - 18rem);
+		margin: auto;
+		padding: 2rem 0;
+		display: flex;
+		justify-content: space-between;
+	}
+
 	&__title {
 		@include mobile-header;
-		margin: 1rem 0;
+		padding: 1rem 0;
 		color: #323232;
 		font-family: "Avenir Medium";
+
+		@include tablet {
+			padding: 1rem 1.125rem;
+			@include section-header;
+		}
+
+		@include desktop {
+			padding: 1rem 8rem 0 0;
+			@include section-header;
+		}
+	}
+
+	&__titles {
+		display: none;
+
+		@include tablet {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: flex-end;
+			padding: 0 1.125rem;
+		}
+
+		@include desktop {
+			padding: 0.5rem 1rem 1rem 1rem;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&--text {
+			@include mobile-copy;
+			line-height: 1.5rem;
+			font-weight: 700;
+			color: #afafaf;
+			width: 8rem;
+		}
+
+		&--button {
+			min-width: 9.375rem;
+			visibility: hidden;
+		}
 	}
 
 	&__list {
 		padding: 1rem 0;
 		display: flex;
 		flex-direction: column;
-		gap: 1rem;
+
+		@include desktop {
+			padding: 2rem 0;
+			width: calc(100% - 15rem);
+			margin: auto;
+		}
 
 		&-card {
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
+			@include showsCard;
+
+			@include tablet {
+				@include showsCardTabletDesktop;
+
+				&:hover {
+					background-color: $bandsite-alabaster;
+					cursor: pointer;
+				}
+			}
+
+			@include desktop {
+				@include showsCardTabletDesktop;
+
+				&:hover {
+					background-color: $bandsite-alabaster;
+					cursor: pointer;
+				}
+			}
+
+			&--selected {
+				@include showsCard;
+
+				@include tablet {
+					@include showsCardTabletDesktop;
+					background-color: $bandsite-mercury;
+				}
+
+				@include desktop {
+					@include showsCardTabletDesktop;
+					background-color: $bandsite-mercury;
+				}
+			}
 
 			&--title {
 				@include mobile-copy;
 				line-height: 1.5rem;
 				font-weight: 700;
 				color: #afafaf;
+
+				@include tablet {
+					display: none;
+				}
+
+				@include desktop {
+					display: none;
+				}
 			}
 
 			&--date {
 				@include mobile-copy;
+				color: $bandsite-black;
 				font-weight: 700;
+				width: 8rem;
 			}
 
 			&--text {
 				@include mobile-copy;
+				width: 8rem;
 			}
 
 			&--button {
@@ -45,13 +150,19 @@
 				height: 2.5rem;
 				border: none;
 				border-radius: 4px;
-			}
 
-			&--border {
-				border-bottom: 1px solid $bandsite-mercury;
-        padding: 0;
-        margin: 0;
-        width: -webkit-fill-available;
+				&:hover {
+					background-color: $bandsite-darkblack;
+					cursor: pointer;
+				}
+
+				@include tablet {
+					min-width: 9.375rem;
+				}
+
+				@include desktop {
+					min-width: 9.375rem;
+				}
 			}
 		}
 	}

@@ -1,5 +1,8 @@
 @use "./partials/mixins" as *;
 @use "./partials/variables" as *;
+@import "./partials/header";
+@import "./partials/footer";
+@import "./partials/global";
 
 /*About Section*/
 .bandsite-about {
@@ -13,7 +16,7 @@
 	}
 
 	@include desktop {
-		width: calc(100% - 22rem);
+		width: calc(100% - 18rem);
 		margin: auto;
 		padding: 2rem 0;
 	}
@@ -95,9 +98,9 @@
 
 		&--bold {
 			@include mobile-copy;
-			line-height: 2.2rem;
 			color: $bandsite-black;
 			margin-bottom: 0.5rem;
+			font-weight: 700;
 
 			@include tablet {
 				@include subheader;
@@ -211,7 +214,7 @@
 
 .bandsite-gallery-desktop {
 	@include desktop {
-		width: calc(100% - 22rem);
+		width: calc(100% - 18rem);
 		margin: auto;
 	}
 }
@@ -227,6 +230,18 @@
 .bandsite-form {
 	padding: 1rem;
 
+	@include tablet {
+		padding: 2rem 0 1rem 0;
+		width: calc(100% - 4.5rem);
+		margin: auto;
+	}
+
+	@include desktop {
+		width: calc(100% - 18rem);
+		margin: auto;
+		padding: 2.5rem 0 1rem 0;
+	}
+
 	&__title {
 		@include mobile-header;
 		margin-bottom: 1rem;
@@ -234,10 +249,12 @@
 		font-family: "Avenir Medium";
 
 		@include tablet {
+			margin-bottom: 2rem;
 			@include section-header;
 		}
 
 		@include desktop {
+			margin-bottom: 2rem;
 			@include section-header;
 		}
 	}
@@ -251,8 +268,26 @@
 		border-bottom: 1px solid $bandsite-mercury;
 		padding-bottom: 1rem;
 
+		@include tablet {
+			width: calc(100% - 10.5rem);
+			margin: auto;
+		}
+
+		@include desktop {
+			width: calc(100% - 30.5rem);
+			margin: auto;
+		}
+
 		&-img {
-			padding: 1rem 0;
+			padding: 2rem 0;
+
+			@include tablet {
+				padding: 1.5rem 0;
+			}
+
+			@include desktop {
+				padding: 1.5rem 0;
+			}
 
 			&--avatar {
 				max-width: 2.25rem;
@@ -260,6 +295,16 @@
 				border-radius: 50%;
 				filter: none;
 				object-fit: cover;
+
+				@include tablet {
+					max-width: 3rem;
+					height: 3rem;
+				}
+
+				@include desktop {
+					max-width: 3rem;
+					height: 3rem;
+				}
 			}
 		}
 
@@ -279,6 +324,21 @@
 				height: 2.5rem;
 				border: none;
 				border-radius: 4px;
+
+				&:hover {
+					background-color: $bandsite-darkblack;
+					cursor: pointer;
+				}
+
+				@include tablet {
+					min-width: 9.375rem;
+					align-self: flex-end;
+				}
+
+				@include desktop {
+					min-width: 9.375rem;
+					align-self: flex-end;
+				}
 			}
 
 			&--placeholder {
@@ -289,36 +349,50 @@
 				filter: none;
 				object-fit: cover;
 			}
+
+			&--input-name {
+				@include mobile-copy;
+				width: -webkit-fill-available;
+				height: 3rem;
+				border: 1px solid $bandsite-mercury;
+				background-color: $bandsite-alabaster;
+				padding: 1rem;
+				border-radius: 4px;
+				overflow-wrap: break-word;
+
+				&:focus {
+				outline: 1px solid $bandsite-black;
+			}
+			}
+
+			&--input-comment {
+				@include mobile-copy;
+				width: -webkit-fill-available;
+				height: 3rem;
+				border: 1px solid $bandsite-mercury;
+				background-color: $bandsite-alabaster;
+				padding: 1rem;
+				border-radius: 4px;
+				overflow-wrap: break-word;
+				height: 7rem;
+				resize: none;
+
+			&:focus {
+				outline: 1px solid $bandsite-black;
+			}
 		}
 	}
 }
 
-#comments-form {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-	width: 82%;
-}
-
-input,
-textarea {
-	@include mobile-copy;
-	width: -webkit-fill-available;
-	height: 3rem;
-	border: 1px solid $bandsite-mercury;
-	background-color: $bandsite-alabaster;
-	padding: 1rem;
-	color: $bandsite-black;
-	border-radius: 4px;
-	overflow-wrap: break-word;
-
-	&:active {
-		border: $bandsite-black;
+	#comments-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		width: -webkit-fill-available;
 	}
 
-	&#comment {
-		height: 7rem;
-		resize: none;
+	::placeholder {
+		color: $bandsite-black;
 	}
 }
 
@@ -330,13 +404,34 @@ textarea {
 	justify-content: space-around;
 	gap: 1rem;
 
-	&--placeholder {
+	@include tablet {
+		width: calc(100% - 14.5rem);
+		margin: auto;
+	}
+
+	@include desktop {
+		width: calc(100% - 46.5rem);
+		margin: auto;
+		padding-bottom: 2.5rem;
+	}
+
+	&__left--image {
 		background-color: $bandsite-mercury;
 		width: 2.25rem;
 		height: 2.25rem;
 		border-radius: 50%;
 		filter: none;
 		object-fit: cover;
+
+		@include tablet {
+			width: 3rem;
+			height: 3rem;
+		}
+
+		@include desktop {
+			width: 3rem;
+			height: 3rem;
+		}
 	}
 
 	&__card {
@@ -348,6 +443,14 @@ textarea {
 		padding-bottom: 0.5rem;
 		border-bottom: 1px solid $bandsite-mercury;
 		width: -webkit-fill-available;
+
+		@include tablet {
+			padding: 0.5rem 0 1.5rem 0;
+		}
+
+		@include desktop {
+			padding: 0.5rem 0 1.5rem 0;
+		}
 
 		&-text {
 			width: -webkit-fill-available;
@@ -381,13 +484,4 @@ textarea {
 			}
 		}
 	}
-}
-
-.bandsite-comments-section__left-image--placeholder {
-	background-color: $bandsite-mercury;
-	width: 2.25rem;
-	height: 2.25rem;
-	border-radius: 50%;
-	filter: none;
-	object-fit: cover;
 }

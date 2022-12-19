@@ -1,20 +1,24 @@
-@use "./partials/mixins" as *;
-@use "./partials/variables" as *;
+@use "./mixins" as *;
+@use "./variables" as *;
 
 /*Footer*/
 .bandsite-footer {
 	background-color: $bandsite-black;
 	@include flex-column;
 	position: relative;
+	padding: 1rem;
 
-	@include mobile {
-		padding: 1rem;
-	}
+			@include tablet {
+			padding: 0;
+		}
+
+		@include desktop {
+			padding: 0;
+		}
 
 	&__title {
 		color: white;
 		@include mobile-header;
-		font-family: "Avenir Medium";
 
 		@include tablet {
 			@include section-header;
@@ -84,7 +88,7 @@
 			padding-top: 1.5rem;
 
 			&--bold {
-				font-family: "Avenir Medium";
+				font-weight: 600;
 			}
 		}
 	}
@@ -126,7 +130,7 @@
 
 	.bandsite-footer-desktop {
 		@include desktop {
-			width: calc(100% - 22rem);
+			width: calc(100% - 18rem);
 			margin: auto;
 			padding: 2rem 0;
 		}
@@ -140,13 +144,12 @@
 		}
 	}
 
-	copyright {
+	&__copyright {
 		color: white;
 		@include mobile-copy;
 
 		@include tablet {
 			@include copy;
-			margin: 2rem 0 1rem 0;
 		}
 
 		@include desktop {

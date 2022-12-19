@@ -18,6 +18,23 @@
 	}
 }
 
+// Shows Card Mixin
+@mixin showsCard {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding-bottom: 1rem;
+	border-bottom: 1px solid $bandsite-mercury;
+}
+
+@mixin showsCardTabletDesktop {
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem 1.125rem;
+}
+
 /*Flex Mixins*/
 @mixin flex-column {
 	display: flex;
@@ -83,7 +100,6 @@
 	font-size: 3.75rem;
 	line-height: 4.25rem;
 	font-weight: 700;
-	letter-spacing: 1px;
 }
 
 @mixin button-label {
