@@ -1,48 +1,9 @@
 //Creating Comments Section
-const FormEl = document.querySelector("#comments-form");
-
-//Array
-let comments = [
-	{
-		name: "Connor Walton",
-		timestamp: new Date("02/17/2021").toLocaleDateString("en-US", {
-			year: "numeric",
-			month: "2-digit",
-			day: "2-digit",
-		}),
-		commentText:
-			"This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-		image: "",
-	},
-
-	{
-		name: "Emilie Beach",
-		timestamp: new Date("01/09/2021").toLocaleDateString("en-US", {
-			year: "numeric",
-			month: "2-digit",
-			day: "2-digit",
-		}),
-		commentText:
-			"I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-		image: "",
-	},
-
-	{
-		name: "Miles Acosta",
-		timestamp: new Date("12/20/2020").toLocaleDateString("en-US", {
-			year: "numeric",
-			month: "2-digit",
-			day: "2-digit",
-		}),
-		commentText:
-			"I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-		image: "",
-	},
-];
+const formEl = document.querySelector("#comments-form");
 
 //Event Listener
 function setupViews() {
-	FormEl.addEventListener("submit", formSubmitHandler);
+	formEl.addEventListener("submit", formSubmitHandler);
 }
 
 //Comment Cards
@@ -71,7 +32,8 @@ function createCommentCard(comment) {
 
 	const timestampEl = document.createElement("span");
 	timestampEl.classList.add("bandsite-comments-section__card-text-1--date");
-	timestampEl.innerText = comment.timestamp;
+	// timestampEl.innerText = comment.timestamp;
+	timestampEl.innerText = comment.date;
 
 	const commentTextDiv = document.createElement("div");
 	commentTextDiv.classList.add("bandsite-comments-section__card-text-2");
@@ -80,7 +42,7 @@ function createCommentCard(comment) {
 	commentTextEl.classList.add(
 		"bandsite-comments-section__card-text-2--comment"
 	);
-	commentTextEl.innerText = comment.commentText;
+	commentTextEl.innerText = comment.comment;
 
 	commentNameDateDiv.append(nameEl, timestampEl);
 	commentTextDiv.append(commentTextEl);
@@ -90,8 +52,54 @@ function createCommentCard(comment) {
 	return commentCard;
 }
 
+// const date = comment.date;
+
+//API Default Comments
+const getComments = () => {
+	axios
+		.get(
+			"https://project-1-api.herokuapp.com/comments?api_key=44dbc5e0-e66f-43b9-a593-d7ddeda814dd"
+		)
+
+		.then((response) => {
+			console.log(response.data);
+			let commentsArray = response.data;
+			commentsArray.forEach(function (comment) {
+				comment.date = new Date(comment.timestamp).toLocaleDateString();
+			});
+			commentsArray.sort(function (a, b) {
+				return b.timestamp - a.timestamp;
+			});
+			displayCommentsArray(commentsArray);
+		})
+
+		.catch((error) => {
+			console.error(error);
+		});
+};
+
+getComments();
+
+//API New Comments
+const addComment = (comments) => {
+	axios
+		.post(
+			"https://project-1-api.herokuapp.com/comments?api_key=44dbc5e0-e66f-43b9-a593-d7ddeda814dd",
+			comments
+		)
+
+		.then((response) => {
+			console.log(response.data);
+			getComments();
+		})
+
+		.catch((error) => {
+			console.error(error);
+		});
+};
+
 //Comments Rendering
-function displayComment() {
+function displayCommentsArray(comments) {
 	const commentsList = document.querySelector(".bandsite-comments-section");
 
 	commentsList.innerHTML = "";
@@ -107,21 +115,13 @@ function formSubmitHandler(e) {
 
 	const commentSubmission = {
 		name: e.target.name.value,
-		timestamp: new Date().toLocaleDateString("en-US", {
-			year: "numeric",
-			month: "2-digit",
-			day: "2-digit",
-		}),
-		commentText: e.target.comment.value,
-		image: e.target.img.value,
+		comment: e.target.comment.value,
 	};
 
-	FormEl.reset();
-	comments.unshift(commentSubmission);
-	displayComment();
+	addComment(commentSubmission);
+	formEl.reset();
 
 	return false;
 }
 
 setupViews();
-displayComment();

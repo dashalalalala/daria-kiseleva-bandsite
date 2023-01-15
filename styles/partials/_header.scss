@@ -1,23 +1,23 @@
 @use "./mixins" as *;
 @use "./variables" as *;
 
-//Mixins
-@mixin subheader-section {
-	position: relative;
-	height: 20rem;
-	width: 100%;
-	display: flex;
-}
+// //Mixins
+// @mixin subheader-section {
+// 	position: relative;
+// 	height: 20rem;
+// 	width: 100%;
+// 	display: flex;
+// }
 
-@mixin overlay-section {
-	position: relative;
-	height: 20rem;
-	width: 100%;
-	display: flex;
-	align-items: center;
-	background-size: cover;
-	background-blend-mode: hue;
-}
+// @mixin overlay-section {
+// 	position: relative;
+// 	height: 20rem;
+// 	width: 100%;
+// 	display: flex;
+// 	align-items: center;
+// 	background-size: cover;
+// 	background-blend-mode: hue;
+// }
 
 /*Bandsite & Shows Header*/
 .bandsite-header {

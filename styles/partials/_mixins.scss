@@ -1,10 +1,5 @@
 @use "./variables" as *;
 
-@mixin mobile {
-	@media (min-width: 320px) and (max-width: $breakpoint-mobile) {
-		@content;
-	}
-}
 
 @mixin tablet {
 	@media (min-width: 768px) and (max-width: $breakpoint-tablet) {
@@ -16,6 +11,24 @@
 	@media (min-width: $breakpoint-desktop) {
 		@content;
 	}
+}
+
+//Header Mixins
+@mixin subheader-section {
+	position: relative;
+	height: 20rem;
+	width: 100%;
+	display: flex;
+}
+
+@mixin overlay-section {
+	position: relative;
+	height: 20rem;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	background-size: cover;
+	background-blend-mode: hue;
 }
 
 // Shows Card Mixin

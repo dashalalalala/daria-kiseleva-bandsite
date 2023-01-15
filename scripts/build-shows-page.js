@@ -1,59 +1,25 @@
-//Creating Shows List
-let shows = [
-	{
-		dateTitle: "DATE",
-		date: "Mon Sept 06 2021",
-		venueTitle: "VENUE",
-		venue: "Ronald Lane",
-		locationTitle: "LOCATION",
-		location: "San Francisco, CA",
-	},
+//Creating Shows List with API
+const getShows = () => {
+	axios
+		.get(
+			"https://project-1-api.herokuapp.com/showdates?api_key=44dbc5e0-e66f-43b9-a593-d7ddeda814dd"
+		)
 
-	{
-		dateTitle: "DATE",
-		date: "Tue Sept 21 2021",
-		venueTitle: "VENUE",
-		venue: "Pier 3 East",
-		locationTitle: "LOCATION",
-		location: "San Francisco, CA",
-	},
+		.then((response) => {
+			console.log(response.data);
+			let showsArray = response.data;
+			showsArray.forEach(function (show) {
+				show.date = new Date(show.date).toDateString();
+			});
+			displayCard(showsArray);
+		})
 
-	{
-		dateTitle: "DATE",
-		date: "Fri Oct 15 2021",
-		venueTitle: "VENUE",
-		venue: "View Lounge",
-		locationTitle: "LOCATION",
-		location: "San Francisco, CA",
-	},
+		.catch((error) => {
+			console.error(error);
+		});
+};
 
-	{
-		dateTitle: "DATE",
-		date: "Sat Nov 06 2021",
-		venueTitle: "VENUE",
-		venue: "Hyatt Agency",
-		locationTitle: "LOCATION",
-		location: "San Francisco, CA",
-	},
-
-	{
-		dateTitle: "DATE",
-		date: "Fri Nov 26 2021",
-		venueTitle: "VENUE",
-		venue: "Moscow Center",
-		locationTitle: "LOCATION",
-		location: "San Francisco, CA",
-	},
-
-	{
-		dateTitle: "DATE",
-		date: "Wed Dec 15 2021",
-		venueTitle: "VENUE",
-		venue: "Press Club",
-		locationTitle: "LOCATION",
-		location: "San Francisco, CA",
-	},
-];
+getShows();
 
 function createShowsListTittleCard(show) {
 	const titleCardEl = document.createElement("div");
@@ -61,15 +27,15 @@ function createShowsListTittleCard(show) {
 
 	const dateTitleEl = document.createElement("h3");
 	dateTitleEl.classList.add("bandsite-concerts__titles--text");
-	dateTitleEl.innerText = show.dateTitle;
+	dateTitleEl.innerText = "SHOWS";
 
 	const venueTitleEl = document.createElement("h3");
 	venueTitleEl.classList.add("bandsite-concerts__titles--text");
-	venueTitleEl.innerText = show.venueTitle;
+	venueTitleEl.innerText = "VENUE";
 
 	const locationTitleEl = document.createElement("h3");
 	locationTitleEl.classList.add("bandsite-concerts__titles--text");
-	locationTitleEl.innerText = show.locationTitle;
+	locationTitleEl.innerText = "LOCATION";
 
 	const buttonEl = document.createElement("button");
 	buttonEl.classList.add("bandsite-concerts__titles--button");
@@ -89,7 +55,6 @@ function displayCardTitles() {
 }
 
 displayCardTitles();
-displayCard();
 
 function createShowsListCard(show) {
 	const cardEl = document.createElement("div");
@@ -100,7 +65,7 @@ function createShowsListCard(show) {
 
 	const dateTitleEl = document.createElement("h3");
 	dateTitleEl.classList.add("bandsite-concerts__list-card--title");
-	dateTitleEl.innerText = show.dateTitle;
+	dateTitleEl.innerText = "DATE";
 
 	const dateEl = document.createElement("p");
 	dateEl.classList.add("bandsite-concerts__list-card--date");
@@ -111,18 +76,18 @@ function createShowsListCard(show) {
 
 	const venueTitleEl = document.createElement("h3");
 	venueTitleEl.classList.add("bandsite-concerts__list-card--title");
-	venueTitleEl.innerText = show.venueTitle;
+	venueTitleEl.innerText = "VENUE";
 
 	const venueEl = document.createElement("p");
 	venueEl.classList.add("bandsite-concerts__list-card--text");
-	venueEl.innerText = show.venue;
+	venueEl.innerText = show.place;
 
 	const locationSection = document.createElement("article");
 	locationSection.classList.add("bandsite-concerts__list-card-split");
 
 	const locationTitleEl = document.createElement("h3");
 	locationTitleEl.classList.add("bandsite-concerts__list-card--title");
-	locationTitleEl.innerText = show.locationTitle;
+	locationTitleEl.innerText = "LOCATION";
 
 	const locationEl = document.createElement("p");
 	locationEl.classList.add("bandsite-concerts__list-card--text");
@@ -141,7 +106,7 @@ function createShowsListCard(show) {
 	return cardEl;
 }
 
-function displayCard() {
+function displayCard(shows) {
 	const cardList = document.querySelector(".bandsite-concerts__list");
 
 	for (let i = 0; i < shows.length; i++) {

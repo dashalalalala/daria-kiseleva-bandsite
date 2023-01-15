@@ -1,19 +1,19 @@
 /*Fonts*/
 @font-face {
   font-family: "Avenir Regular";
-  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTPro.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTPro.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Demi";
-  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProDemi.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProDemi.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Bold";
-  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProBold.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProBold.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Medium";
-  src: url("/assets/fonts/AvenirNextLTPro-Medium.otf"), format(opentype);
+  src: url("/assets/fonts/AvenirNextLTPro-Medium.otf") format(opentype);
 }
 /*Primary Colors*/
 /*Secondary Colors*/
@@ -24,19 +24,19 @@
 /*Fonts*/
 @font-face {
   font-family: "Avenir Regular";
-  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTPro.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTPro.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Demi";
-  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProDemi.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProDemi.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Bold";
-  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProBold.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProBold.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Medium";
-  src: url("/assets/fonts/AvenirNextLTPro-Medium.otf"), format(opentype);
+  src: url("/assets/fonts/AvenirNextLTPro-Medium.otf") format(opentype);
 }
 /*Primary Colors*/
 /*Secondary Colors*/
@@ -352,19 +352,19 @@ iframe {
 /*Fonts*/
 @font-face {
   font-family: "Avenir Regular";
-  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTPro.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTPro.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Demi";
-  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProDemi.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProDemi.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Bold";
-  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProBold.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProBold.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Medium";
-  src: url("/assets/fonts/AvenirNextLTPro-Medium.otf"), format(opentype);
+  src: url("/assets/fonts/AvenirNextLTPro-Medium.otf") format(opentype);
 }
 /*Primary Colors*/
 /*Secondary Colors*/
@@ -560,19 +560,19 @@ iframe {
 /*Fonts*/
 @font-face {
   font-family: "Avenir Regular";
-  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTPro.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Regular.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTPro.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Demi";
-  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProDemi.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Demi.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProDemi.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Bold";
-  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf"), format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProBold.ttf"), format(truetype);
+  src: url("/assets/fonts/AvenirNextLTPro-Bold.otf") format(opentype), url("/assets/fonts/alternative-files/AvenirNextLTProBold.ttf") format(truetype);
 }
 @font-face {
   font-family: "Avenir Medium";
-  src: url("/assets/fonts/AvenirNextLTPro-Medium.otf"), format(opentype);
+  src: url("/assets/fonts/AvenirNextLTPro-Medium.otf") format(opentype);
 }
 /*Primary Colors*/
 /*Secondary Colors*/
