@@ -2,7 +2,7 @@
 @use "./variables" as *;
 
 /*Footer*/
-.bandsite-footer {
+.footer {
 	background-color: $bandsite-black;
 	@include flex-column;
 	position: relative;
@@ -114,7 +114,7 @@
 		}
 	}
 
-	.bandsite-footer-top {
+	.footer-top {
 		@include tablet {
 			@include flex-row;
 			gap: 0.825rem;
@@ -128,7 +128,7 @@
 		}
 	}
 
-	.bandsite-footer-desktop {
+	.footer-desktop {
 		@include desktop {
 			width: calc(100% - 18rem);
 			margin: auto;
@@ -136,7 +136,7 @@
 		}
 	}
 
-	.bandsite-footer-tablet {
+	.footer-tablet {
 		@include tablet {
 			width: calc(100% - 4.5rem);
 			margin: auto;

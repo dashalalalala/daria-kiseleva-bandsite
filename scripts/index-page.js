@@ -7,41 +7,39 @@ function setupViews() {
 }
 
 //Comment Cards
-function createCommentCard(comment) {
+function displayComment(comment) {
 	const commentCard = document.createElement("div");
-	commentCard.classList.add("bandsite-comments-section__card");
+	commentCard.classList.add("comments-section__card");
 
 	const imgElDiv = document.createElement("div");
-	imgElDiv.classList.add("bandsite-comments-section__left");
+	imgElDiv.classList.add("comments-section__left");
 
 	const imgEl = document.createElement("img");
-	imgEl.classList.add("bandsite-comments-section__left--image");
+	imgEl.classList.add("comments-section__left--image");
 	imgEl.innerHTML = comment.image;
 
 	imgElDiv.append(imgEl);
 
 	const commentElDiv = document.createElement("article");
-	commentElDiv.classList.add("bandsite-comments-section__card-text");
+	commentElDiv.classList.add("comments-section__card-text");
 
 	const commentNameDateDiv = document.createElement("div");
-	commentNameDateDiv.classList.add("bandsite-comments-section__card-text-1");
+	commentNameDateDiv.classList.add("comments-section__card-text-1");
 
 	const nameEl = document.createElement("h3");
-	nameEl.classList.add("bandsite-comments-section__card-text-1--title");
+	nameEl.classList.add("comments-section__card-text-1--title");
 	nameEl.innerText = comment.name;
 
 	const timestampEl = document.createElement("span");
-	timestampEl.classList.add("bandsite-comments-section__card-text-1--date");
+	timestampEl.classList.add("comments-section__card-text-1--date");
 	// timestampEl.innerText = comment.timestamp;
 	timestampEl.innerText = comment.date;
 
 	const commentTextDiv = document.createElement("div");
-	commentTextDiv.classList.add("bandsite-comments-section__card-text-2");
+	commentTextDiv.classList.add("comments-section__card-text-2");
 
 	const commentTextEl = document.createElement("span");
-	commentTextEl.classList.add(
-		"bandsite-comments-section__card-text-2--comment"
-	);
+	commentTextEl.classList.add("comments-section__card-text-2--comment");
 	commentTextEl.innerText = comment.comment;
 
 	commentNameDateDiv.append(nameEl, timestampEl);
@@ -100,12 +98,12 @@ const addComment = (comments) => {
 
 //Comments Rendering
 function displayCommentsArray(comments) {
-	const commentsList = document.querySelector(".bandsite-comments-section");
+	const commentsList = document.querySelector(".comments-section");
 
 	commentsList.innerHTML = "";
 
 	for (let i = 0; i < comments.length; i++) {
-		commentsList.appendChild(createCommentCard(comments[i]));
+		commentsList.appendChild(displayComment(comments[i]));
 	}
 }
 

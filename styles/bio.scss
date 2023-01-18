@@ -5,7 +5,7 @@
 @import "./partials/global";
 
 /*About Section*/
-.bandsite-about {
+.about {
 	margin: auto;
 	padding: 1rem;
 
@@ -38,7 +38,6 @@
 	&__title {
 		@include mobile-header;
 		color: $bandsite-black;
-		font-family: "Avenir Medium";
 
 		@include tablet {
 			@include section-header;
@@ -121,7 +120,6 @@
 			@include tablet {
 				font-size: 1.1rem;
 				margin-top: 0.5rem;
-				font-family: Avenir Medium;
 			}
 
 			@include desktop {
@@ -138,13 +136,11 @@
 
 			@include tablet {
 				@include subheader;
-				font-family: "Avenir Medium";
 				margin-top: 3rem;
 			}
 
 			@include desktop {
 				@include subheader;
-				font-family: "Avenir Medium";
 				margin-top: 3rem;
 			}
 		}
@@ -152,7 +148,7 @@
 }
 
 /*Photo Gallery*/
-.bandsite-photo-gallery {
+.photo-gallery {
 	padding: 1rem;
 	background-color: $bandsite-alabaster;
 
@@ -168,7 +164,6 @@
 		@include mobile-header;
 		margin-bottom: 1rem;
 		color: $bandsite-black;
-		font-family: "Avenir Medium";
 
 		@include tablet {
 			@include section-header;
@@ -212,14 +207,14 @@
 	}
 }
 
-.bandsite-gallery-desktop {
+.gallery-desktop {
 	@include desktop {
 		width: calc(100% - 18rem);
 		margin: auto;
 	}
 }
 
-.bandsite-gallery-tablet {
+.gallery-tablet {
 	@include tablet {
 		width: calc(100% - 4.5rem);
 		margin: auto;
@@ -227,7 +222,7 @@
 }
 
 /*Comments Section*/
-.bandsite-form {
+.form {
 	padding: 1rem;
 
 	@include tablet {
@@ -246,7 +241,6 @@
 		@include mobile-header;
 		margin-bottom: 1rem;
 		color: $bandsite-black;
-		font-family: "Avenir Medium";
 
 		@include tablet {
 			margin-bottom: 2rem;
@@ -396,7 +390,7 @@
 	}
 }
 
-.bandsite-comments-section {
+.comments-section {
 	padding: 0 1rem 1rem 1rem;
 	display: flex;
 	flex-direction: column;
