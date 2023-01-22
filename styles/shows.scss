@@ -25,7 +25,6 @@
 		@include mobile-header;
 		padding-top: 1rem;
 		color: #323232;
-		font-family: "Avenir Medium";
 
 		@include tablet {
 			padding: 1rem 1.125rem;
@@ -80,89 +79,92 @@
 			width: calc(100% - 15rem);
 			margin: auto;
 		}
+	}
 
-		&-card {
+	.card {
+		@include showsCard;
+
+		@include tablet {
+			@include showsCardTabletDesktop;
+
+			&:hover {
+				background-color: $bandsite-alabaster;
+				cursor: pointer;
+			}
+		}
+
+		@include desktop {
+			@include showsCardTabletDesktop;
+
+			&:hover {
+				background-color: $bandsite-alabaster;
+				cursor: pointer;
+			}
+		}
+
+		&__selected {
 			@include showsCard;
+			background-color: $bandsite-mercury;
 
 			@include tablet {
 				@include showsCardTabletDesktop;
-
-				&:hover {
-					background-color: $bandsite-alabaster;
-					cursor: pointer;
-				}
+				background-color: $bandsite-mercury;
 			}
 
 			@include desktop {
 				@include showsCardTabletDesktop;
+				background-color: $bandsite-mercury;
+			}
+		}
 
-				&:hover {
-					background-color: $bandsite-alabaster;
-					cursor: pointer;
-				}
+		&__title {
+			@include mobile-copy;
+			line-height: 1.5rem;
+			font-weight: 700;
+			color: #afafaf;
+			font-family: "Avenir Demi";
+
+			@include tablet {
+				display: none;
 			}
 
-			&--selected {
-				@include showsCard;
+			@include desktop {
+				display: none;
+			}
+		}
 
-				@include tablet {
-					@include showsCardTabletDesktop;
-					background-color: $bandsite-mercury;
-				}
+		&__date {
+			@include mobile-copy;
+			color: $bandsite-black;
+			font-weight: 700;
+			width: 8rem;
+			font-family: "Avenir Demi";
+		}
 
-				@include desktop {
-					@include showsCardTabletDesktop;
-					background-color: $bandsite-mercury;
-				}
+		&__text {
+			@include mobile-copy;
+			width: 8rem;
+		}
+
+		&__button {
+			@include button-label;
+			background-color: $bandsite-black;
+			color: white;
+			height: 2.5rem;
+			border: none;
+			border-radius: 4px;
+
+			&:hover {
+				background-color: $bandsite-darkblack;
+				cursor: pointer;
 			}
 
-			&--title {
-				@include mobile-copy;
-				line-height: 1.5rem;
-				font-weight: 700;
-				color: #afafaf;
-
-				@include tablet {
-					display: none;
-				}
-
-				@include desktop {
-					display: none;
-				}
+			@include tablet {
+				min-width: 9.375rem;
 			}
 
-			&--date {
-				@include mobile-copy;
-				color: $bandsite-black;
-				font-weight: 700;
-				width: 8rem;
-			}
-
-			&--text {
-				@include mobile-copy;
-				width: 8rem;
-			}
-
-			&--button {
-				@include mobile-button-label;
-				background-color: $bandsite-black;
-				color: white;
-				height: 2.5rem;
-				border: none;
-				border-radius: 4px;
-
-				&:hover {
-					background-color: $bandsite-darkblack;
-					cursor: pointer;
-				}
-
-				@include tablet {
-					min-width: 9.375rem;
-				}
-
-				@include desktop {
-					min-width: 9.375rem;
-				}
+			@include desktop {
+				min-width: 9.375rem;
 			}
 		}
 	}

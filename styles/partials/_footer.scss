@@ -8,13 +8,13 @@
 	position: relative;
 	padding: 1rem;
 
-			@include tablet {
-			padding: 0;
-		}
+	@include tablet {
+		padding: 0;
+	}
 
-		@include desktop {
-			padding: 0;
-		}
+	@include desktop {
+		padding: 0;
+	}
 
 	&__title {
 		color: white;
@@ -88,7 +88,7 @@
 			padding-top: 1.5rem;
 
 			&--bold {
-				font-weight: 600;
+				font-family: "Avenir Demi";
 			}
 		}
 	}
@@ -147,6 +147,7 @@
 	&__copyright {
 		color: white;
 		@include mobile-copy;
+		font-size: 0.7125rem;
 
 		@include tablet {
 			@include copy;

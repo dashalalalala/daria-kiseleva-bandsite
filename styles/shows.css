@@ -17,6 +17,7 @@
 /*Flex Mixins*/
 /*Font Mixins (Mobile)*/
 /*Font Mixins (Tablet & Desktop)*/
+/*Font Mixins (Universal)*/
 /*Fonts*/
 @font-face {
   font-family: "Avenir Regular";
@@ -36,6 +37,7 @@
 /*Flex Mixins*/
 /*Font Mixins (Mobile)*/
 /*Font Mixins (Tablet & Desktop)*/
+/*Font Mixins (Universal)*/
 /*Bandsite & Shows Header*/
 .header {
   background-color: #323232;
@@ -188,6 +190,7 @@
   font-weight: 700;
   line-height: 1.5rem;
   margin-top: 0.5rem;
+  font-family: "Avenir Demi";
   color: white;
   position: relative;
   letter-spacing: 1px;
@@ -197,6 +200,7 @@
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 700;
+    font-family: "Avenir Demi";
   }
 }
 @media (min-width: 1280px) {
@@ -204,6 +208,7 @@
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 700;
+    font-family: "Avenir Demi";
   }
 }
 
@@ -260,7 +265,7 @@
 .shows-subheader__text {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.125rem;
   width: -webkit-fill-available;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
@@ -277,6 +282,8 @@
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.375rem;
+  font-family: "Avenir Demi";
+  font-family: "Avenir Regular";
   color: white;
   font-weight: 400;
 }
@@ -285,6 +292,7 @@
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
+    font-family: "Avenir Demi";
     font-weight: 500;
   }
 }
@@ -293,6 +301,7 @@
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 600;
+    font-family: "Avenir Demi";
   }
 }
 .shows-subheader__title {
@@ -300,9 +309,10 @@
   font-weight: 700;
   line-height: 1.5rem;
   margin-top: 0.5rem;
+  font-family: "Avenir Demi";
   color: white;
   position: relative;
-  letter-spacing: 1px;
+  line-height: 2rem;
   max-width: 75%;
   margin: 0;
 }
@@ -311,6 +321,7 @@
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 700;
+    font-family: "Avenir Demi";
     max-width: 100%;
     padding-bottom: 3rem;
   }
@@ -320,6 +331,7 @@
     font-size: 3.75rem;
     line-height: 4.25rem;
     font-weight: 700;
+    font-family: "Avenir Demi";
     max-width: 92%;
     padding-bottom: 3rem;
   }
@@ -360,6 +372,7 @@ iframe {
 /*Flex Mixins*/
 /*Font Mixins (Mobile)*/
 /*Font Mixins (Tablet & Desktop)*/
+/*Font Mixins (Universal)*/
 /*Footer*/
 .footer {
   background-color: #323232;
@@ -384,12 +397,14 @@ iframe {
   font-weight: 700;
   line-height: 1.5rem;
   margin-top: 0.5rem;
+  font-family: "Avenir Demi";
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .footer__title {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
+    font-family: "Avenir Demi";
   }
 }
 @media (min-width: 1280px) {
@@ -397,6 +412,7 @@ iframe {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
+    font-family: "Avenir Demi";
   }
 }
 .footer__social {
@@ -470,7 +486,7 @@ iframe {
   padding-top: 1.5rem;
 }
 .footer__contact-list--bold {
-  font-weight: 600;
+  font-family: "Avenir Demi";
 }
 .footer__logo {
   padding: 4rem 0 1rem 0;
@@ -528,6 +544,7 @@ iframe {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
+  font-size: 0.7125rem;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .footer__copyright {
@@ -564,11 +581,12 @@ iframe {
 /*Flex Mixins*/
 /*Font Mixins (Mobile)*/
 /*Font Mixins (Tablet & Desktop)*/
+/*Font Mixins (Universal)*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Avenir";
+  font-family: "Avenir Regular";
 }
 
 ul {
@@ -607,9 +625,9 @@ a {
   font-weight: 700;
   line-height: 1.5rem;
   margin-top: 0.5rem;
+  font-family: "Avenir Demi";
   padding-top: 1rem;
   color: #323232;
-  font-family: "Avenir Medium";
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .concerts__title {
@@ -617,6 +635,7 @@ a {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
+    font-family: "Avenir Demi";
   }
 }
 @media (min-width: 1280px) {
@@ -625,6 +644,7 @@ a {
     font-size: 2.25rem;
     line-height: 2.75rem;
     font-weight: 700;
+    font-family: "Avenir Demi";
   }
 }
 .concerts__titles {
@@ -672,7 +692,7 @@ a {
     margin: auto;
   }
 }
-.concerts__list-card {
+.concerts .card {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -680,40 +700,41 @@ a {
   border-bottom: 1px solid #e1e1e1;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
-  .concerts__list-card {
+  .concerts .card {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 1.125rem;
   }
-  .concerts__list-card:hover {
+  .concerts .card:hover {
     background-color: #fafafa;
     cursor: pointer;
   }
 }
 @media (min-width: 1280px) {
-  .concerts__list-card {
+  .concerts .card {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 1.125rem;
   }
-  .concerts__list-card:hover {
+  .concerts .card:hover {
     background-color: #fafafa;
     cursor: pointer;
   }
 }
-.concerts__list-card--selected {
+.concerts .card__selected {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid #e1e1e1;
+  background-color: #e1e1e1;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
-  .concerts__list-card--selected {
+  .concerts .card__selected {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -723,7 +744,7 @@ a {
   }
 }
 @media (min-width: 1280px) {
-  .concerts__list-card--selected {
+  .concerts .card__selected {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -732,59 +753,62 @@ a {
     background-color: #e1e1e1;
   }
 }
-.concerts__list-card--title {
+.concerts .card__title {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
   line-height: 1.5rem;
   font-weight: 700;
   color: #afafaf;
+  font-family: "Avenir Demi";
 }
 @media (min-width: 768px) and (max-width: 1279px) {
-  .concerts__list-card--title {
+  .concerts .card__title {
     display: none;
   }
 }
 @media (min-width: 1280px) {
-  .concerts__list-card--title {
+  .concerts .card__title {
     display: none;
   }
 }
-.concerts__list-card--date {
+.concerts .card__date {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
   color: #323232;
   font-weight: 700;
   width: 8rem;
+  font-family: "Avenir Demi";
 }
-.concerts__list-card--text {
+.concerts .card__text {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
   width: 8rem;
 }
-.concerts__list-card--button {
-  font-size: 0.625rem;
+.concerts .card__button {
+  font-size: 0.825rem;
   line-height: 1.25rem;
   font-weight: 700;
+  font-family: "Avenir Demi";
   background-color: #323232;
   color: white;
   height: 2.5rem;
   border: none;
   border-radius: 4px;
 }
-.concerts__list-card--button:hover {
+.concerts .card__button:hover {
   background-color: #000000;
   cursor: pointer;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
-  .concerts__list-card--button {
+  .concerts .card__button {
     min-width: 9.375rem;
   }
 }
 @media (min-width: 1280px) {
-  .concerts__list-card--button {
+  .concerts .card__button {
     min-width: 9.375rem;
   }
 }/*# sourceMappingURL=shows.css.map */

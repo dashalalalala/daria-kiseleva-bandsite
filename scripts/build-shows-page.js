@@ -9,14 +9,16 @@ const getShows = () => {
 			console.log(response.data);
 			let showsArray = response.data;
 			showsArray.forEach(function (show) {
-				show.date = new Date(show.date).toDateString();
+				var date = new Date(show.date);
+				date.setDate(date.getDate() + 1);
+				show.date = date.toDateString();
 			});
 			displayCard(showsArray);
-			let cardEls = document.querySelectorAll(".concerts__list-card");
+			let cardEls = document.querySelectorAll(".card");
 			cardEls.forEach((div) => {
 				div.addEventListener("click", function () {
-					cardEls.forEach((d) => (d.className = "concerts__list-card"));
-					div.className = "concerts__list-card--selected";
+					cardEls.forEach((d) => (d.className = "card"));
+					div.className = "card__selected";
 				});
 			});
 		})
@@ -28,58 +30,60 @@ const getShows = () => {
 
 getShows();
 
-//Creating Show Card 
+//Creating Show Card
 function createShowsListCard(show) {
 	const cardEl = document.createElement("div");
-	cardEl.classList.add("concerts__list-card");
+	cardEl.classList.add("card");
 
 	const dateSection = document.createElement("article");
-	dateSection.classList.add("concerts__list-card-split");
+	dateSection.classList.add("card__article");
 
 	const dateTitleEl = document.createElement("h3");
-	dateTitleEl.classList.add("concerts__list-card--title");
+	dateTitleEl.classList.add("card__title");
 	dateTitleEl.innerText = "DATE";
 
 	const dateEl = document.createElement("p");
-	dateEl.classList.add("concerts__list-card--date");
+	dateEl.classList.add("card__date");
 	dateEl.innerText = show.date;
 
+	dateSection.append(dateTitleEl, dateEl);
+
 	const venueSection = document.createElement("article");
-	venueSection.classList.add("concerts__list-card-split");
+	venueSection.classList.add("card__article");
 
 	const venueTitleEl = document.createElement("h3");
-	venueTitleEl.classList.add("concerts__list-card--title");
+	venueTitleEl.classList.add("card__title");
 	venueTitleEl.innerText = "VENUE";
 
 	const venueEl = document.createElement("p");
-	venueEl.classList.add("concerts__list-card--text");
+	venueEl.classList.add("card__text");
 	venueEl.innerText = show.place;
 
+	venueSection.append(venueTitleEl, venueEl);
+
 	const locationSection = document.createElement("article");
-	locationSection.classList.add("concerts__list-card-split");
+	locationSection.classList.add("card__article");
 
 	const locationTitleEl = document.createElement("h3");
-	locationTitleEl.classList.add("concerts__list-card--title");
+	locationTitleEl.classList.add("card__title");
 	locationTitleEl.innerText = "LOCATION";
 
 	const locationEl = document.createElement("p");
-	locationEl.classList.add("concerts__list-card--text");
+	locationEl.classList.add("card__text");
 	locationEl.innerText = show.location;
 
+	locationSection.append(locationTitleEl, locationEl);
+
 	const buttonEl = document.createElement("button");
-	buttonEl.classList.add("concerts__list-card--button");
+	buttonEl.classList.add("card__button");
 	buttonEl.innerHTML = "BUY TICKETS";
 
-	// showCardDiv.append(cardEl);
-	dateSection.append(dateTitleEl, dateEl);
-	venueSection.append(venueTitleEl, venueEl);
-	locationSection.append(locationTitleEl, locationEl);
 	cardEl.append(dateSection, venueSection, locationSection, buttonEl);
 
 	return cardEl;
 }
 
-
+//Display Card Function
 function displayCard(shows) {
 	const cardList = document.querySelector(".concerts__list");
 
@@ -88,26 +92,26 @@ function displayCard(shows) {
 	}
 }
 
-//Creating Titles Div for Tablet & Desktop
-	const showsDiv = document.querySelector(".concerts__list");
-	const titleCardEl = document.createElement("div");
-	titleCardEl.classList.add("concerts__titles");
+//Creating Titles Div for Tablet & Desktop (to help with CSS Styling)
+const showsDiv = document.querySelector(".concerts__list");
+const titleCardEl = document.createElement("div");
+titleCardEl.classList.add("concerts__titles");
 
-	const dateTitleEl = document.createElement("h3");
-	dateTitleEl.classList.add("concerts__titles--text");
-	dateTitleEl.innerText = "SHOWS";
+const dateTitleEl = document.createElement("h3");
+dateTitleEl.classList.add("concerts__titles--text");
+dateTitleEl.innerText = "SHOWS";
 
-	const venueTitleEl = document.createElement("h3");
-	venueTitleEl.classList.add("concerts__titles--text");
-	venueTitleEl.innerText = "VENUE";
+const venueTitleEl = document.createElement("h3");
+venueTitleEl.classList.add("concerts__titles--text");
+venueTitleEl.innerText = "VENUE";
 
-	const locationTitleEl = document.createElement("h3");
-	locationTitleEl.classList.add("concerts__titles--text");
-	locationTitleEl.innerText = "LOCATION";
+const locationTitleEl = document.createElement("h3");
+locationTitleEl.classList.add("concerts__titles--text");
+locationTitleEl.innerText = "LOCATION";
 
-	const buttonEl = document.createElement("button");
-	buttonEl.classList.add("concerts__titles--button");
-	buttonEl.innerHTML = "";
+const buttonEl = document.createElement("button");
+buttonEl.classList.add("concerts__titles--button");
+buttonEl.innerHTML = "";
 
-	showsDiv.append(titleCardEl);
-	titleCardEl.append(dateTitleEl, venueTitleEl, locationTitleEl, buttonEl);
+showsDiv.append(titleCardEl);
+titleCardEl.append(dateTitleEl, venueTitleEl, locationTitleEl, buttonEl);

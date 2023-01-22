@@ -1,6 +1,5 @@
 @use "./variables" as *;
 
-
 @mixin tablet {
 	@media (min-width: 768px) and (max-width: $breakpoint-tablet) {
 		@content;
@@ -76,18 +75,14 @@
 	font-weight: 700;
 	line-height: 1.5rem;
 	margin-top: 0.5rem;
+	font-family: "Avenir Demi";
 }
 
 @mixin mobile-subheader {
 	font-size: 0.875rem;
 	font-weight: 600;
 	line-height: 1.375rem;
-}
-
-@mixin mobile-button-label {
-	font-size: 0.625rem;
-	line-height: 1.25rem;
-	font-weight: 700;
+	font-family: "Avenir Demi";
 }
 
 /*Font Mixins (Tablet & Desktop)*/
@@ -101,22 +96,28 @@
 	font-size: 1.5rem;
 	line-height: 2rem;
 	font-weight: 600;
+	font-family: "Avenir Demi";
 }
 
 @mixin section-header {
 	font-size: 2.25rem;
 	line-height: 2.75rem;
 	font-weight: 700;
+	font-family: "Avenir Demi";
 }
 
 @mixin page-header {
 	font-size: 3.75rem;
 	line-height: 4.25rem;
 	font-weight: 700;
+	font-family: "Avenir Demi";
 }
 
+/*Font Mixins (Universal)*/
+
 @mixin button-label {
-	font-size: 0.75rem;
+	font-size: 0.825rem;
 	line-height: 1.25rem;
 	font-weight: 700;
+	font-family: "Avenir Demi";
 }
